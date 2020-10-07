@@ -2,8 +2,9 @@
 These are docs intended to help with creating custom Lua scripts to extend VLC functionality.
 
 #### **Disclaimers**
-1. I might refer to "lists", "arrays" or "objects" a lot in these docs, but that is by habbit. In lua these are all just [tables](https://www.lua.org/pil/11.html). Bascially, this is NOT in any way a Lua tutorial.
-2. All info in these docs is sourced from [README files in here](https://code.videolan.org/videolan/vlc/-/tree/master/share/lua/), [VideoLAN Forums](https://forum.videolan.org/), [the Wiki](https://wiki.videolan.org/), [code from existing VLC addons](https://addons.videolan.org) and of course my own tinkering and looking at the source code.
+1. This documentation is for VLC and is written according to the [source code](https://code.videolan.org/videolan/vlc/) available at the time of writing. Your VLC plugins might behave differently than expected depending on what version you are running and how long ago the latest release was.
+2. I might refer to "lists", "arrays" or "objects" a lot in these docs, but that is by habbit. In lua these are all just [tables](https://www.lua.org/pil/11.html). Bascially, this is NOT in any way a Lua tutorial.
+3. All info in these docs is sourced from [README files in here](https://code.videolan.org/videolan/vlc/-/tree/master/share/lua/), [VideoLAN Forums](https://forum.videolan.org/), [the Wiki](https://wiki.videolan.org/), [code from existing VLC addons](https://addons.videolan.org) and of course my own tinkering and looking at the source code.
 
 ## How to install custom Lua scripts
 Lua scripts are installed in the /Lua folder of the VLC install directory under subdirectories according to their type
