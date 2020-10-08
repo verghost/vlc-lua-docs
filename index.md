@@ -39,7 +39,7 @@ While a custom script is running, VLC will look for a number of different identi
 
 ### Modules
 In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3) that work kind of like "libraries" do in other languages (this might be why they're implemented in VLC source code under [libs](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs)). Normally the programmer would use the `require` keyword to include modules in their code, but VLC's Lua environment does the requiring on it's end (NOTE: non-vlc modules still needed to be included in the code; this is explained below). Modules are available via the global `vlc` table, depending on the type of script that is running.
-<!-- FIXME?: Maybe the table on the home page should be representative of the latest release -->
+
 The following table holds all defined modules in the [repo](https://code.videolan.org/videolan/vlc/), not necessarily the latest release. For more info, see full module pages.
 
 | Name | Symbol(s) | Description | Availability |
@@ -56,8 +56,6 @@ The following table holds all defined modules in the [repo](https://code.videola
 | [Network](https://verghost.com/vlc-lua-docs/m/net)  | `net` | Various network methods | Extension, Interface |
 | [Object](https://verghost.com/vlc-lua-docs/m/object)  | `object` | Provides access to various objects | Extension, Interface, Meta, Service Discovery |
 | [OSD](https://verghost.com/vlc-lua-docs/m/osd)  | `osd` | On-screen display functionality (ex. Display OSD messages, modify channels) | Extension, Interface |
-<!-- NOTE: The "Player" module is actually just the "input" module from 3.0.x releases; it's even still defined in libs/input.h -->
-<!-- Also, input.c still contains the luaopen_input_item call, which is used by both the playlist and player modules -->
 | [Player](https://verghost.com/vlc-lua-docs/m/input) | `player` | Access the VLC player interface | Extension, Interface, Service Discovery |
 | [Playlist](https://verghost.com/vlc-lua-docs/m/playlist)  | `playlist` | Access and modify playlists | Extension, Interface |
 | [Random](https://verghost.com/vlc-lua-docs/m/rand)  | `rand` | Get random numbers/bytes | Extension, Interface |
