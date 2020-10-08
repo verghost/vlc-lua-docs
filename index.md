@@ -24,8 +24,8 @@ Scripts are placed into their install directories as text-based '.lua' source co
 
 ### Types of Plugins
 
-| Name | Description | Install Subdirectory | Version Range |
-| ---- | ----------- | -------------------- | ------------- |
+| Name | Short Description | Install Subdirectory | Version Range |
+| ---- | ----------------- | -------------------- | ------------- |
 | [Art](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/meta/art/ | ? |
 | [Extensions](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/extensions/ | ? |
 | [Interfaces](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/intf/ | ? |
@@ -40,8 +40,8 @@ While a custom script is running, VLC will look for a number of different identi
 ### Modules
 In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3) that work kind of like "libraries" do in other languages (this might be why they're implemented in VLC source code under [libs](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs)). Normally the programmer would use the `require` keyword to include modules in their code, but VLC's Lua environment does the requiring on it's end (NOTE: non-vlc modules still needed to be included in the code; this is explained below). Modules are available via the global `vlc` table, depending on the type of script that is running.
 
-| Name | Symbol(s) | Description | Availability |
-| ---- | --------- | ----------- | ------------ |
+| Name | Symbol(s) | Short Description | Availability |
+| ---- | --------- | ----------------- | ------------ |
 | [Configuration](https://verghost.com/vlc-lua-docs/config) | `config` | Access and modify VLC configuration options | Extension, Interface |
 | [Dialog](https://verghost.com/vlc-lua-docs/dialog) | `dialog` | Interface to the DialogUI object | Extension |
 | [Equalizer](https://verghost.com/vlc-lua-docs/equalizer) | `equalizer` | Access and modify equalizer settings and presets | Interface |
