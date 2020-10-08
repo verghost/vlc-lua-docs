@@ -10,7 +10,7 @@ The aim of these docs is to create a single, centralized resource that contains 
 There are a few different types of lua scripts each with their own purpose, functionality, install directory and quirks. Because of this, I have given each of the types their own page instead of laying everything out here. Instead I will use this page to cover the basics.
 
 ### What are VLC Lua Plugins?
-They are small one-file* programs written in [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)), a lightweight programming language that was designed to be embedded in other apps. These programs are run by VLC and can access internal VLC data and functionality via the VLC Lua API, which these docs attempt to describe. The API differs from version to version, but basically allows anyone with basic knowledge of Lua to extend the functionality of VLC.
+Plugins are small one-file* programs written in [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)), a lightweight programming language that was designed to be embedded in other apps. These programs are run by VLC and can access internal VLC data and functionality via the VLC Lua API, which these docs attempt to describe. The API differs from version to version, but basically allows anyone with basic knowledge of Lua to extend the functionality of VLC.
 ###### * some exceptions to this, for example if custom Lua modules are installed
 
 ### Installation
@@ -24,8 +24,8 @@ Scripts are placed into their install directories as text-based '.lua' source co
 
 ### Types of Plugins
 
-| Name | Short Description | Install Subdirectory | Version Range |
-| ---- | ----------------- | -------------------- | ------------- |
+| Name | Description | Install Subdirectory | Version Range |
+| ---- | ----------- | -------------------- | ------------- |
 | [Art](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/meta/art/ | ? |
 | [Extensions](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/extensions/ | ? |
 | [Interfaces](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/intf/ | ? |
@@ -35,41 +35,45 @@ Scripts are placed into their install directories as text-based '.lua' source co
 | [Services Discovery](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/sd/ | ? |
 
 ### Special Identifiers
-While a custom script is running, VLC will look for a number of different identifiers (names of functions or variables). How they are defined will determine the look and functionality of a script, or whether the script runs at all. Different plugin types expect different identifiers to be defined, so see the type pages for specific identifiers.
+While a custom script is running, VLC will look for a number of different identifiers (names of functions or variables). How they are defined and implemented determines the look and functionality of a script, or whether the script runs at all. Different plugin types expect different identifiers to be defined, so see the type pages for more detail.
 
 ### Modules
 In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3) that work kind of like "libraries" do in other languages (this might be why they're implemented in VLC source code under [libs](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs)). Normally the programmer would use the `require` keyword to include modules in their code, but VLC's Lua environment does the requiring on it's end (NOTE: non-vlc modules still needed to be included in the code; this is explained below). Modules are available via the global `vlc` table, depending on the type of script that is running.
+<!-- FIXME?: Maybe the table on the home page should be representative of the latest release -->
+The following table holds all defined modules in the [repo](https://code.videolan.org/videolan/vlc/), not necessarily the latest release. For more info, see full module pages.
 
-| Name | Symbol(s) | Short Description | Availability |
-| ---- | --------- | ----------------- | ------------ |
+| Name | Symbol(s) | Description | Availability |
+| ---- | --------- | ----------- | ------------ |
 | [Configuration](https://verghost.com/vlc-lua-docs/config) | `config` | Access and modify VLC configuration options | Extension, Interface |
 | [Dialog](https://verghost.com/vlc-lua-docs/dialog) | `dialog` | Interface to the DialogUI object | Extension |
 | [Equalizer](https://verghost.com/vlc-lua-docs/equalizer) | `equalizer` | Access and modify equalizer settings and presets | Interface |
 | [GetText](https://verghost.com/vlc-lua-docs/iandl) | `gettext` | Alias for libvlc [gettext](https://en.wikipedia.org/wiki/Gettext) | Interface, Service Discovery |
 | [Errno](https://verghost.com/vlc-lua-docs/errno) | `errno` | Error values | Extension, Interface |
 | [HTTPd](https://verghost.com/vlc-lua-docs/httpd)  | `httpd` | Interface to the VLC HTTP Daemon constructor | Interface |
-| [Input/Output](https://verghost.com/vlc-lua-docs/io)  | `io` | Input/Output (i.e. file read/write, directories, etc...) | Extension, Interface |
+| [I/O](https://verghost.com/vlc-lua-docs/io)  | `io` | Input/Output (i.e. file read/write, directories, etc...) | Extension, Interface |
 | [Messages](https://verghost.com/vlc-lua-docs/msg)  | `msg` | Output to the Messages console (Tools->Messages) | All types |
 | [Miscellaneous](https://verghost.com/vlc-lua-docs/misc)  | `misc` | Uncategroized functionality | Interface |
-| [Network](https://verghost.com/vlc-lua-docs/net)  | `net` | Various network methods | Interface and Extension |
+| [Network](https://verghost.com/vlc-lua-docs/net)  | `net` | Various network methods | Extension, Interface |
 | [Object](https://verghost.com/vlc-lua-docs/object)  | `object` | Provides access to various objects | Extension, Interface, Meta, Service Discovery |
 | [OSD](https://verghost.com/vlc-lua-docs/osd)  | `osd` | On-screen display functionality (ex. Display OSD messages, modify channels) | Extension, Interface |
-| [Player](https://verghost.com/vlc-lua-docs/player)  | `player` | Interface to VLC player | Unknown |
-| [Playlist](https://verghost.com/vlc-lua-docs/playlist)  | `playlist` | Access and modify playlists | Unknown |
-| [Random](https://verghost.com/vlc-lua-docs/rand)  | `rand` | Get random numbers/bytes | Unknown |
-| Renderer Discover | `rd` | Unknown (Not yet added as of 08/10/2020) | Interface, Extension |
-| [Services Discovery](https://verghost.com/vlc-lua-docs/sd)  | `sd` | Functions for service discovery scripts (i.e. add nodes, items) | Interface, Service Discovery |
-| [Stream](https://verghost.com/vlc-lua-docs/stream)  | `stream`, `memory_stream`, `directory_stream` | Access to data streams and methods to read/modify them | Interface |
-| [Strings](https://verghost.com/vlc-lua-docs/strings)  | `strings` | String utils (ex. parse URI/URL, handle special chars) | Interface |
-| [Variables](https://verghost.com/vlc-lua-docs/var)  | `var` | Interface to VLC internal variables(?) | Unknown |
-| [Video](https://verghost.com/vlc-lua-docs/video)  | `video` | Change video interface | Unknown |
-| [VLM](https://verghost.com/vlc-lua-docs/vlm)  | `vlm` | VideoLAN Manager object instance method | Unknown |
+<!-- NOTE: The "Player" module is actually just the "input" module from 3.0.x releases; it's even still defined in libs/input.h -->
+<!-- Also, input.c still contains the luaopen_input_item call, which is used by both the playlist and player modules -->
+| [Player](https://verghost.com/vlc-lua-docs/input) | `player` | Access the VLC player interface | Extension, Interface, Service Discovery |
+| [Playlist](https://verghost.com/vlc-lua-docs/playlist)  | `playlist` | Access and modify playlists | Extension, Interface |
+| [Random](https://verghost.com/vlc-lua-docs/rand)  | `rand` | Get random numbers/bytes | Extension, Interface |
+| Renderer Discover | `rd` | Unknown (Not included in latest release as of 08/10/2020) | Interface, Extension |
+| [Services Discovery](https://verghost.com/vlc-lua-docs/sd)  | `sd` | Functions for service discovery scripts (i.e. add nodes, items) | Service Discovery |
+| [Stream](https://verghost.com/vlc-lua-docs/stream)  | `stream`, `memory_stream`, `directory_stream` | Access to data streams and methods to read/modify them | All Types |
+| [Strings](https://verghost.com/vlc-lua-docs/strings)  | `strings` | String utils (ex. parse URI/URL, handle special chars) | All Types |
+| [Variables](https://verghost.com/vlc-lua-docs/var)  | `var` | Interface to VLC internal variables(?) | All Types |
+| [Video](https://verghost.com/vlc-lua-docs/video)  | `video` | Change video interface | Extension, Interface |
+| [VLM](https://verghost.com/vlc-lua-docs/vlm)  | `vlm` | VideoLAN Manager object instance method | Extension, Interface |
 | [Volume](https://verghost.com/vlc-lua-docs/volume)  | `volume` | Modify volume | Extension, Interface |
 | [Windows](https://verghost.com/vlc-lua-docs/win)  | `win` | Access to Windows console | Extension, Interface (Windows builds only) |
 | [XML](https://verghost.com/vlc-lua-docs/xml)  | `xml` | [XML](https://en.wikipedia.org/wiki/XML) reader, can be replaced by simplexml | All types |
 
 ### Non-VLC Modules
-Outside of the modules in the global `vlc` table, VLC provides a few other useful Lua modules that offer some tools to aid in developing more complex plugins. These modules are found in <VLC_INSTALL_PATH>/lua/modules/ and must be explicitly required in lua code using the built-in [require](https://www.lua.org/pil/8.1.html) function
+Outside of the modules in the global `vlc` table, VLC provides a few other useful Lua modules that offer some tools to aid in developing more complex plugins. These modules are found in <VLC_INSTALL_PATH>/lua/modules/ and must be explicitly required in lua code using the built-in [require](https://www.lua.org/pil/8.1.html) function.
 
 ```lua
 require "module1" -- This works
@@ -86,4 +90,4 @@ LUAC is a command line tool that lets you translate Lua scripts (.lua) into bina
 #### What LUAC does NOT do
 - Create files that are necessarily smaller than the source code
 - Speed up execution times or perform any optimizations that wouldn't already be done at runtime
-- Apply any encryption or obfuscation that would prevent someone from easily reverse engineering Lua programs ([decompilers have existed for a while](http://luadec.luaforge.net/))
+- Apply any encryption or obfuscation that would prevent someone from easily reverse engineering Lua programs ([decompilers exist](http://luadec.luaforge.net/))
