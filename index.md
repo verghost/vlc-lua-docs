@@ -1,15 +1,16 @@
 # VLC Lua Docs
-The aim of these docs is to create a single, centralized resource that contains accurate, version-specific documentation on the VLC Lua plugin API in order to (hopefully) help aspiring plugin developers. All info in these docs has been compiled from a number of disparate readme files, [VideoLAN Forum](https://forum.videolan.org/) posts, [the Wiki](https://wiki.videolan.org/), [code from existing VLC addons](https://addons.videolan.org) and of course my own tinkering and staring at the source code.
+The aim of these docs is to create a single, centralized resource that contains accurate, version-specific documentation on the VLC Lua API in order to (hopefully) help aspiring developers. All info in these docs has been compiled from a number of disparate readme files, [VideoLAN Forum](https://forum.videolan.org/) posts, [the Wiki](https://wiki.videolan.org/), [code from existing VLC addons](https://addons.videolan.org) and of course my own tinkering and staring at the source code.
 
 ### **Note**
 - This is NOT a Lua tutorial. There are plenty of good ones out there, so these docs expect that you are familiar with the language.
 - This documentation intentionally overlooks VLC [skins](https://www.videolan.org/vlc/skins.html). This is mainly because they already have their own [skin editor application](https://www.videolan.org/vlc/skins.html) and are a little outdated (last release was 25-Aug-2009). Plus they require a totally different "skinnable" U.I. which looks real ugly.
+- Finally, for the sake of combining similar terms like "addon", "script" and "extension", I will basically just call every Lua-based extension of VLC a "plugin".
 
 ## Plugin Basics
 There are a few different types of lua scripts each with their own purpose, functionality, install directory and quirks. Because of this, I have given each of the types their own page instead of laying everything out here. Instead I will use this page to cover the basics.
 
 ### What are VLC Lua Plugins?
-They are small one-file* programs written in [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)), a very small and lightweight programming language that was designed to be embedded in other apps. These programs are run by VLC and can access internal VLC data and functionality via the VLC Lua API, which these docs attempt to describe. The API differs from version to version, but basically allows anyone with basic knowledge of Lua to extend the functionality of VLC.
+They are small one-file* programs written in [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)), a lightweight programming language that was designed to be embedded in other apps. These programs are run by VLC and can access internal VLC data and functionality via the VLC Lua API, which these docs attempt to describe. The API differs from version to version, but basically allows anyone with basic knowledge of Lua to extend the functionality of VLC.
 ###### * some exceptions to this, for example if custom Lua modules are installed
 
 ### Installation
