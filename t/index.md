@@ -1,4 +1,1 @@
----
-layout: default
-title: NA
----
+# Plugin Types
