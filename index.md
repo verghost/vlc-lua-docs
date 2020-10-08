@@ -23,14 +23,16 @@ Scripts are placed into their install directories as text-based '.lua' source co
 - Mac OS X (current user): /Users/%your_name%/Library/Application Support/org.videolan.vlc/lua/
 
 ### Types of Plugins
-- [Interfaces](https://verghost.com/vlc-lua-docs/interface) (Installed at /lua/intf/)
-- [Extensions](https://verghost.com/vlc-lua-docs/interface) (Installed at /lua/extensions/)
-- Meta Scripts
-  - [Art](https://verghost.com/vlc-lua-docs/interface) (Installed at /lua/meta/art/)
-  - [Meta Fetcher](https://verghost.com/vlc-lua-docs/interface) (Installed at /lua/meta/fetcher)
-  - [Meta Reader](https://verghost.com/vlc-lua-docs/interface) (Installed at /lua/meta/reader/)
-- [Playlist parsers](https://verghost.com/vlc-lua-docs/interface) (Installed at /lua/playlist/)
-- [Services Discovery](https://verghost.com/vlc-lua-docs/interface) (Installed at /lua/sd/)
+
+| Name | Description | Install Subdirectory | Version Range |
+| ---- | ----------- | -------------------- | ------------- |
+| [Art](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/meta/art/ | ? |
+| [Extensions](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/extensions/ | ? |
+| [Interfaces](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/intf/ | ? |
+| [Meta Fetcher](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/meta/fetcher | ? |
+| [Meta Reader](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/meta/reader/ | ? |
+| [Playlist Parsers](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/playlist/ | ? |
+| [Services Discovery](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/sd/ | ? |
 
 ### Special Identifiers
 While a custom script is running, VLC will look for a number of different identifiers (names of functions or variables). How they are defined will determine the look and functionality of a script, or whether the script runs at all. Different plugin types expect different identifiers to be defined, so see the type pages for specific identifiers.
