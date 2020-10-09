@@ -59,7 +59,6 @@ The following table holds all defined modules in the [latest release](https://ge
 | [Player](https://verghost.com/vlc-lua-docs/m/input) | `player` | Access the VLC player interface | Extension, Interface, Service Discovery |
 | [Playlist](https://verghost.com/vlc-lua-docs/m/playlist)  | `playlist` | Access and modify playlists | Extension, Interface |
 | [Random](https://verghost.com/vlc-lua-docs/m/rand)  | `rand` | Get random numbers/bytes | Extension, Interface |
-| Renderer Discover | `rd` | Unknown (Not included in latest release as of 08/10/2020) | Interface, Extension |
 | [Services Discovery](https://verghost.com/vlc-lua-docs/m/sd)  | `sd` | Functions for service discovery scripts (i.e. add nodes, items) | Service Discovery |
 | [Stream](https://verghost.com/vlc-lua-docs/m/stream)  | `stream`, `memory_stream`, `directory_stream` | Access to data streams and methods to read/modify them | All Types |
 | [Strings](https://verghost.com/vlc-lua-docs/m/strings)  | `strings` | String utils (ex. parse URI/URL, handle special chars) | All Types |
