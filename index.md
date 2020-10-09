@@ -28,7 +28,7 @@ Scripts are placed into their install directories as text-based '.lua' source co
 | ---- | ----------- | -------------------- | ------------- |
 | [Art](https://verghost.com/vlc-lua-docs/t/art) | ? | /lua/meta/art/ | ? |
 | [Extensions](https://verghost.com/vlc-lua-docs/t/extensions) | ? | /lua/extensions/ | ? |
-| [Interfaces](https://verghost.com/vlc-lua-docs/interface) | ? | /lua/intf/ | ? |
+| [Interfaces](https://verghost.com/vlc-lua-docs/t/intf) | ? | /lua/intf/ | ? |
 | [Meta Fetcher](https://verghost.com/vlc-lua-docs/t/fetcher) | ? | /lua/meta/fetcher | ? |
 | [Meta Reader](https://verghost.com/vlc-lua-docs/t/reader) | ? | /lua/meta/reader/ | ? |
 | [Playlist Parsers](https://verghost.com/vlc-lua-docs/t/playlist) | ? | /lua/playlist/ | ? |
