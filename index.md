@@ -40,7 +40,7 @@ While a custom script is running, VLC will look for a number of different identi
 ### Modules
 In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3) that work kind of like "libraries" do in other languages (this might be why they're implemented in VLC source code under [libs](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs)). Normally the programmer would use the `require` keyword to include modules in their code, but VLC's Lua environment does the requiring on it's end (NOTE: non-vlc modules still needed to be included in the code; this is explained below). Modules are available via the global `vlc` table, depending on the type of script that is running.
 
-The following table holds all defined modules in the [repo](https://code.videolan.org/videolan/vlc/), not necessarily the latest release. For more info, see full module pages.
+The following table holds all defined modules in the [latest release](https://get.videolan.org/vlc/last/) of VLC Media Player. See plugin type pages or the [module list](https://verghost.com/vlc-lua-docs/m) for version-specific info on newer builds or older releases.
 
 | Name | Symbol(s) | Description | Availability |
 | ---- | --------- | ----------- | ------------ |
