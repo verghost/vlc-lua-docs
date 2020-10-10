@@ -1,6 +1,6 @@
 # Configuration Module 
 
-###### Version: >`9.0`
+###### Version: >9.0
 
 Access and modify configuration options.  
 Option names can be found in the `vlcrc` file in the folder given by `vlc.config.configdir()` (usually %appdata%\vlc\ on windows).
