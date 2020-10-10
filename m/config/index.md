@@ -1,5 +1,5 @@
 ---
-subtype: vld
+project: vld
 vld-meta-version: 9.0,1.0:2.0,9.0,+
 ---
 
