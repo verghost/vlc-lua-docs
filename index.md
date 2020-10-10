@@ -4,17 +4,17 @@ The aim of these docs is to create a single, centralized resource that contains 
 ### **Note**
 - This is NOT a Lua tutorial. There are plenty of good ones out there, so these docs expect that you are familiar with the language.
 - This documentation intentionally overlooks VLC [skins](https://www.videolan.org/vlc/skins.html). This is mainly because they already have their own [skin editor application](https://www.videolan.org/vlc/skins.html) and are a little outdated (last release was 25-Aug-2009). Plus they require a totally different "skinnable" U.I. which looks real ugly.
-- Finally, for the sake of combining similar terms like "addon", "script" and "extension", I will basically just call every Lua-based extension of VLC a "plugin".
+- Finally, for the sake of combining similar terms like "addon", "plugin", "extension", etc... I will basically just call every Lua-based extension of VLC a "script".
 
-## Plugin Basics
+## Script Basics
 There are a few different types of lua scripts each with their own purpose, functionality, install directory and quirks. Because of this, I have given each of the types their own page instead of laying everything out here. Instead I will use this page to cover the basics.
 
-### What are VLC Lua Plugins?
-Plugins are small one-file* programs written in [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)), a lightweight programming language that was designed to be embedded in other apps. These programs are run by VLC and can access internal VLC data and functionality via the VLC Lua API, which these docs attempt to describe. The API differs from version to version, but basically allows anyone with basic knowledge of Lua to extend the functionality of VLC.
+### What are VLC Lua Scripts?
+Scripts are small one-file* programs written in [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)), a lightweight programming language that was designed to be embedded in other apps. These programs are run by VLC and can access internal VLC data and functionality via the VLC Lua API, which these docs attempt to describe. The API differs from version to version, but basically allows anyone with basic knowledge of Lua to extend the functionality of VLC.
 ###### * some exceptions to this, for example if custom Lua modules are installed
 
 ### Installation
-Scripts are placed into their install directories as text-based '.lua' source code files, or as compiled '.luac' binaries (see the section at the bottom about LUAC for more info). Each of the install directories for different types of plugins are found in the 'lua' folder in the VLC install directory. Below are the default install directories for VLC on different platforms.
+Scripts are placed into their install directories as text-based '.lua' source code files, or as compiled '.luac' binaries (see the section at the bottom about LUAC for more info). Each of the install directories for different types of scripts are found in the 'lua' folder in the VLC install directory. Below are the default install directories for VLC on different platforms.
 - Windows (all users): %ProgramFiles%\VideoLAN\VLC\lua\
 - Windows (current user): %APPDATA%\VLC\lua\
 - Linux (all users): /usr/lib/vlc/lua/
@@ -22,7 +22,7 @@ Scripts are placed into their install directories as text-based '.lua' source co
 - Mac OS X (all users): /Applications/VLC.app/Contents/MacOS/share/lua/
 - Mac OS X (current user): /Users/%your_name%/Library/Application Support/org.videolan.vlc/lua/
 
-### Types of Plugins
+### Types of Scripts
 
 | Name | Description | Install Subdirectory | Version Range |
 | ---- | ----------- | -------------------- | ------------- |
@@ -35,12 +35,12 @@ Scripts are placed into their install directories as text-based '.lua' source co
 | [Services Discovery](https://verghost.com/vlc-lua-docs/t/sd) | ? | /lua/sd/ | ? |
 
 ### Special Identifiers
-While a custom script is running, VLC will look for a number of different identifiers (names of functions or variables). How they are defined and implemented determines the look and functionality of a script, or whether the script runs at all. Different plugin types expect different identifiers to be defined, so see the type pages for more detail.
+While a custom script is running, VLC will look for a number of different identifiers (names of functions or variables). How they are defined and implemented determines the look and functionality of a script, or whether the script runs at all. Different script types expect different identifiers to be defined, so see the type pages for more detail.
 
 ### Modules
 In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3) that work kind of like "libraries" do in other languages (this might be why they're implemented in VLC source code under [libs](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs)). Normally the programmer would use the `require` keyword to include modules in their code, but VLC's Lua environment does the requiring on it's end (NOTE: non-vlc modules still needed to be included in the code; this is explained below). Modules are available via the global `vlc` table, depending on the type of script that is running.
 
-The following table holds all defined modules in the [latest release](https://get.videolan.org/vlc/last/) of VLC Media Player. See plugin type pages or the [module list](https://verghost.com/vlc-lua-docs/m) for version-specific info on newer builds or older releases.
+The following table holds all defined modules in the [latest release](https://get.videolan.org/vlc/last/) of VLC Media Player. See script type pages or the [module list](https://verghost.com/vlc-lua-docs/m) for version-specific info on newer builds or older releases.
 
 | Name | Symbol(s) | Description | Availability |
 | ---- | --------- | ----------- | ------------ |
@@ -70,7 +70,7 @@ The following table holds all defined modules in the [latest release](https://ge
 | [XML](https://verghost.com/vlc-lua-docs/m/xml)  | `xml` | [XML](https://en.wikipedia.org/wiki/XML) reader, can be replaced by simplexml | All types |
 
 ### Non-VLC Modules
-Outside of the modules in the global `vlc` table, VLC provides a few other useful Lua modules that offer some tools to aid in developing more complex plugins. These modules are found in VLC_INSTALL_PATH/lua/modules/ and must be explicitly required in lua code using the built-in [require](https://www.lua.org/pil/8.1.html) function.
+Outside of the modules in the global `vlc` table, VLC provides a few other useful Lua modules that offer some tools to aid in developing more complex scripts. These modules are found in VLC_INSTALL_PATH/lua/modules/ and must be explicitly required in lua code using the built-in [require](https://www.lua.org/pil/8.1.html) function.
 
 ```lua
 require "module1" -- This works
