@@ -4,8 +4,8 @@ The aim of these docs is to create a single, centralized resource that contains 
 ### **A Few Thing To Note**
 - This is NOT a Lua tutorial. There are plenty of good ones out there, so these docs expect that you are familiar with the language.
 - This documentation intentionally overlooks VLC [skins](https://www.videolan.org/vlc/skins.html). This is mainly because they already have their own [skin editor application](https://www.videolan.org/vlc/skins.html) and are a little outdated (last release was 25-Aug-2009). Plus they require a totally different "skinnable" U.I. which looks real ugly.
-- The versions I have chosen to delineate in these docs are following the legacy, maintenance and development branches on the VLC repo.
-- Finally, for the sake of combining similar terms like "addon", "plugin", "extension", etc... I will basically just call every Lua-based extension of VLC a "script".
+- The VLC versions I have chosen to delineate in these docs are the major legacy, maintenance and development branches on the [VideoLAN repo](https://code.videolan.org/videolan). The Lua modules were added in 9.0 (I think [0.8.6 & 0.9.0-svn](https://code.videolan.org/videolan/vlc-0.9/-/commit/99a8123cd1e7898ac1fa0aec85fb2594a762b0b8), and some in [0.8.6i & 0.9.0](https://code.videolan.org/videolan/vlc-0.9/-/blob/master/NEWS#L184))
+- Finally, for the sake of streamlining terminology, I'm going to use "addon", "plugin", "extension", etc as categories of "scripts".
 
 ## Script Basics
 There are a few different types of lua scripts each with their own purpose, functionality, install directory and quirks. Because of this, I have given each of the types their own page instead of laying everything out here. Instead I will use this page to cover the basics.
