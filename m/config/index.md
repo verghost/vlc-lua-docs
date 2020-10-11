@@ -4,7 +4,7 @@ Access and modify configuration options.
 Option names can be found in the `vlcrc` file in the folder given by `vlc.config.configdir()` (usually %appdata%\vlc\ on windows).
 
 ----
-# `get()`
+## `get()`
 Get the value of a VLC configuration option.
 ### Syntax
 ```lua
@@ -17,7 +17,7 @@ local option = vlc.config.get(name)
 The value of the setting corresponding to `name`. If `name` does not correspond to an existing option, then get() fails.
 
 ----
-# `set()`
+## `set()`
 Se the value of a VLC configuration option.
 ### Syntax
 ```lua
@@ -31,7 +31,7 @@ vlc.config.set(name, value)
 None
 
 ----
-# `datadir()`
+## `datadir()`
 Get the VLC data directory.
 ### Syntax
 ```lua
@@ -44,7 +44,7 @@ None
 A string representing the path to the data directory.
 
 ----
-# `datadir_list()`
+## `datadir_list()`
 Get the list of possible data directories in order of priority, each will have `str` appended onto the end.
 ### Syntax
 ```lua
@@ -57,7 +57,7 @@ local dirList = vlc.config.datadir_list(str)
 An indexed table of strings, each representing a data directory path.
 
 ----
-# `userdatadir()`
+## `userdatadir()`
 Get the current user's VLC data directory.
 ### Syntax
 ```lua
@@ -70,7 +70,7 @@ None
 A string representing the path to the current user's VLC data directory.
 
 ----
-# `homedir()`
+## `homedir()`
 Get the current user's home directory.
 ### Syntax
 ```lua
@@ -83,7 +83,7 @@ None
 A string representing the path to the current user's home directory.
 
 ----
-# `configdir()`
+## `configdir()`
 Get the current user's VLC config directory.
 ### Syntax
 ```lua
@@ -96,7 +96,7 @@ None
 A string representing the path to the current user's VLC config directory.
 
 ----
-# `cachedir()`
+## `cachedir()`
 Get the current user's VLC cache directory.
 ### Syntax
 ```lua
