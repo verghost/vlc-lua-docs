@@ -2,9 +2,9 @@
 The aim of these docs is to (hopefully) help aspiring developers. All info in these docs has been compiled from a number of disparate readme files, [VideoLAN Forum](https://forum.videolan.org/) posts, [the Wiki](https://wiki.videolan.org/), [code from existing VLC addons](https://addons.videolan.org) and of course my own tinkering and staring at the source code.
 
 ### **A Few Thing To Note**
-- This is NOT a Lua tutorial. There are plenty of good ones out there, so these docs expect that you are familiar with the language.
+- This is NOT a Lua tutorial. There are plenty of good ones out there, though.
 - This documentation intentionally overlooks VLC [skins](https://www.videolan.org/vlc/skins.html). This is mainly because they already have their own [skin editor application](https://www.videolan.org/vlc/skins.html) and are a little outdated (last release was 25-Aug-2009). Plus they require a totally different "skinnable" U.I. which looks real ugly.
-- The VLC versions I have chosen to delineate in these docs are the major legacy, maintenance and development branches on the [VideoLAN repo](https://code.videolan.org/videolan). The Lua modules were added in version 9.
+- The VLC app has undergone lots of changes, so Lua modules have come, gone and been moved since version. In these docs, I refer to the [latest release](https://get.videolan.org/vlc/last/) as of October 2020.
 - Finally, for the sake of streamlining terminology, I'm going to use "addon", "plugin", "extension", etc as categories of "scripts".
 
 ## Script Basics
@@ -39,8 +39,6 @@ While a custom script is running, VLC will look for a number of different identi
 
 ### Modules
 In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3). Modules are available via the global `vlc` table, depending on the type of script that is running.
-
-The following table lists all defined modules in the [latest release](https://get.videolan.org/vlc/last/) of VLC Media Player.
 
 | Name | Symbol(s) | Description | Availability |
 | ---- | --------- | ----------- | ------------ |
