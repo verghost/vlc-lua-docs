@@ -30,11 +30,6 @@ Show the dialog, create the window.
 local dlg = vlc.dialog("My VLC Extension")
 dlg:show()
 ```
-### Parameters
-None
-
-### Return value
-None
 
 ----
 
@@ -50,11 +45,6 @@ if should_hide then
   dlg:hide()
 end
 ```
-### Parameters
-None
-
-### Return value
-None
 
 ----
 
@@ -69,11 +59,6 @@ if closing_time then
   dlg:delete()
 end
 ```
-### Parameters
-None
-
-### Return value
-None
 
 ----
 
@@ -88,9 +73,6 @@ dlg:set_title(title)
 ### Parameters
 - `title` A string representing the new dialog title
 
-### Return value
-None
-
 ----
 
 ## `dialog:update()`
@@ -101,11 +83,6 @@ Updates the dialog without waiting for the current function to complete.
 local dlg = vlc.dialog("My VLC Extension")
 dlg:update()
 ```
-### Parameters
-None
-
-### Return value
-None
 
 ----
 
@@ -123,9 +100,6 @@ end
 ```
 ### Parameters
 - `widget` The widget to be deleted
-
-### Return value
-None
 
 ----
 
@@ -362,9 +336,6 @@ local wgt = dialog:add_check_box("Yes/No")
 vlc.msg.info(wgt:get_text()) -- "Yes/No"
 ```
 
-### Parameters
-None
-
 ### Return value
 A string containing the display text for the widget
 
@@ -383,9 +354,6 @@ wgt:set_text("No/Yes")
 ### Parameters
 - `text` String representing the new display text for the widget
 
-### Return value
-None
-
 ----
 
 ## `widget:get_checked()`
@@ -397,9 +365,6 @@ Applies to the follwing types of widget: check_box.
 local wgt = dialog:add_check_box("Yes/No", true)
 local currState = wgt:get_checked() -- true
 ```
-
-### Parameters
-None
 
 ### Return value
 A boolean value representing the current true/false state of the widget
@@ -419,9 +384,6 @@ wgt:set_checked(true)
 ### Parameters
 `checked` Boolean representing the new true/false state of the widget
 
-### Return value
-None
-
 ----
 
 ## `widget:get_value()`
@@ -434,9 +396,6 @@ local ddv1, ddv2 = dialog:add_dropdown():get_value()
 ddv1 -- -1
 ddv2 -- nil
 ```
-
-### Parameters
-None
 
 ### Return value
 An Integer corresponding to the identifier selected item
@@ -460,9 +419,6 @@ dropdown_wgt:add_value("four", 4)
 - `id` Integer identifier for the new item.
   - This value defaults to 0 and is optional if id = 0 is not an item (i.e. empty list). If two items share the same id, then widget:get_value will fail on the item)
 
-### Return value
-None
-
 ----
 
 ## `widget:clear()`
@@ -478,12 +434,6 @@ if clear_list then
 end
 ```
 
-### Parameters
-None
-
-### Return value
-None
-
 ----
 
 ## `widget:get_selection()`
@@ -496,9 +446,6 @@ local list_wgt = dialog:add_list()
 local lsel = list_wgt:get_selection() -- empty table
 ```
 
-### Parameters
-None
-
 ### Return value
 Table corresponding to any selected items; Keys = Integer IDs, Values = String text value
 
@@ -506,14 +453,14 @@ Table corresponding to any selected items; Keys = Integer IDs, Values = String t
 
 ## `widget:animate()`
 ###### Only in 4.0+
-Get the current selection for the widget.  
-Applies to the follwing types of widget: list.
+Start the animation on the widget.  
+Applies to the follwing types of widget: spin_icon.
 
 ----
 
 ## `widget:stop()`
 ###### Only in 4.0+
-Get the current selection for the widget.  
-Applies to the follwing types of widget: list.
+Stop an animation in progress on the widget.
+Applies to the follwing types of widget: spin_icon.
 
 ----
