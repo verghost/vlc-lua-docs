@@ -76,7 +76,8 @@ local mod2 = require("module2") -- This also works
 ```
 
 ## LUAC
-LUAC is a command line tool that lets you translate Lua scripts (.lua) into binary files (.luac). VLC will accept these files instead of the source code files. A more detailed description of LUAC can be found on it's [man page](https://www.lua.org/manual/5.1/luac.html), but here's a quick summary:
+LUAC is a command line tool that lets you translate Lua scripts (.lua) into binary files (.luac), which are accepted as extensions by VLC (ex. VLC compiles the native VLSub extension for releases).  
+A more detailed description of LUAC can be found on it's [man page](https://www.lua.org/manual/5.1/luac.html), but here's a quick summary:
 
 #### What LUAC does
 - Precompiles Lua chunks into bytecode and saves them in a file, ensuring faster load times by saving on compilation time
