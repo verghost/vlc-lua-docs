@@ -249,7 +249,7 @@ A widget object corresponding to the new widget
 
 ## `dialog:add_dropdown()`
 Add a dropdown list widget to the dialog.  
-Only one item can be selected at a time, list items are managed using [add_value()](#widgetadd_value), [clear()](#widgetclear) and [get_selection()](#widgetget_selection).
+Only one item can be selected at a time. Items are managed using [add_value()](#widgetadd_value), [clear()](#widgetclear) and [get_selection()](#widgetget_selection).
 
 ### Usage
 ```lua
