@@ -3,7 +3,7 @@ The aim of these docs is to (hopefully) help aspiring developers. All info in th
 
 ### **A Few Thing To Note**
 - This is NOT a Lua tutorial. There are plenty of good ones out there, though.
-- This documentation intentionally overlooks VLC [skins](https://www.videolan.org/vlc/skins.html). This is mainly because they already have their own [skin editor application](https://www.videolan.org/vlc/skins.html) and are a little outdated (last release was 25-Aug-2009). Plus they require a totally different "skinnable" U.I. which looks real ugly.
+- This documentation intentionally overlooks VLC [skins](https://www.videolan.org/vlc/skins.html). This is mainly because they already have their own [skin editor application](https://www.videolan.org/vlc/skins.html) and are a little outdated (last release was 25-Aug-2009).
 - The VLC app has undergone lots of changes, so Lua modules have come, gone and been moved since version. In these docs, I refer to the [latest release](https://get.videolan.org/vlc/last/) as of October 2020.
 - Finally, for the sake of streamlining terminology, I'm going to use "addon", "plugin", "extension", etc as categories of "scripts".
 
