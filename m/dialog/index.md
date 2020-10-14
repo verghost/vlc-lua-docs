@@ -1,3 +1,7 @@
+<!-- 
+TODO: Add list of methods provided by each widget (in rv section?).
+-->
+
 # Dialog Module
 This module provides access to VLC's dialog and widget system via the UI Dialog object.
 
@@ -245,7 +249,7 @@ A widget object corresponding to the new widget
 
 ## `dialog:add_dropdown()`
 Add a dropdown list widget to the dialog.  
-Only one item can be selected at a time, items are added to the list from widget methods.
+Only one item can be selected at a time, list items are managed using [add_value()](#widgetadd_value), [clear()](#widgetclear) and [get_selection()](#widgetget_selection).
 
 ### Usage
 ```lua
