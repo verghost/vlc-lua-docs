@@ -6,6 +6,7 @@ Option names can be found in the `vlcrc` file in the folder given by `vlc.config
 ----
 ## `get()`
 Get the value of a VLC configuration option.
+
 ### Usage
 ```lua
 local option = vlc.config.get(name)
@@ -19,26 +20,24 @@ The value of the setting corresponding to `name`. If `name` does not correspond 
 ----
 ## `set()`
 Se the value of a VLC configuration option.
+
 ### Usage
 ```lua
 vlc.config.set(name, value)
 ```
+
 ### Parameters
 - `name` Name of the vlc config option
 - `value` Value to assign to the config option
 
-### Return value
-None
-
 ----
 ## `datadir()`
 Get the VLC data directory.
+
 ### Usage
 ```lua
 local dataDir = vlc.config.datadir()
 ```
-### Parameters
-None
 
 ### Return value
 A string representing the path to the data directory.
@@ -46,10 +45,12 @@ A string representing the path to the data directory.
 ----
 ## `datadir_list()`
 Get the list of possible data directories in order of priority, each will have `str` appended onto the end.
+
 ### Usage
 ```lua
 local dirList = vlc.config.datadir_list(str)
 ```
+
 ### Parameters
 `str` A string that will be appended onto the end of each returned path.
 
@@ -59,10 +60,12 @@ An indexed table of strings, each representing a data directory path.
 ----
 ## `userdatadir()`
 Get the current user's VLC data directory.
+
 ### Usage
 ```lua
 local udataDir = vlc.config.userdatadir()
 ```
+
 ### Parameters
 None
 
@@ -72,12 +75,11 @@ A string representing the path to the current user's VLC data directory.
 ----
 ## `homedir()`
 Get the current user's home directory.
+
 ### Usage
 ```lua
 local homeDir = vlc.config.homedir()
 ```
-### Parameters
-None
 
 ### Return value
 A string representing the path to the current user's home directory.
@@ -85,12 +87,11 @@ A string representing the path to the current user's home directory.
 ----
 ## `configdir()`
 Get the current user's VLC config directory.
+
 ### Usage
 ```lua
 local configDir = vlc.config.configdir()
 ```
-### Parameters
-None
 
 ### Return value
 A string representing the path to the current user's VLC config directory.
@@ -98,12 +99,11 @@ A string representing the path to the current user's VLC config directory.
 ----
 ## `cachedir()`
 Get the current user's VLC cache directory.
+
 ### Usage
 ```lua
 local cacheDir = vlc.config.cachedir()
 ```
-### Parameters
-None
 
 ### Return value
 A string representing the path to the current user's VLC cache directory.
