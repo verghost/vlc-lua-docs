@@ -1,8 +1,6 @@
 <!-- 
 TODO: Add list of methods provided by each widget (in rv section?).
 -->
-
-# Dialog Module
 This module provides access to VLC's dialog and widget system via the UI Dialog object.
 
 ----
