@@ -6,7 +6,7 @@ The aim of these docs is to (hopefully) help aspiring developers. All info in th
 - The VLC app has undergone lots of changes, so Lua modules have come, gone and been moved since version. In these docs, I refer to the [latest release](https://get.videolan.org/vlc/last/) as of October 2020.
 - Finally, for the sake of streamlining terminology, I'm going to use "addon", "plugin", "extension", etc as categories of "scripts".
 
-## Script Basics
+# Script Basics
 There are a few types of lua scripts each with their own page instead of laying everything out here. I will use this page to cover the basics.
 
 ### What are VLC Lua Scripts?
@@ -21,7 +21,7 @@ Scripts are placed into their own special folders in the VLC install directory. 
 - Mac OS X (all users): /Applications/VLC.app/Contents/MacOS/share/lua/
 - Mac OS X (current user): /Users/%your_name%/Library/Application Support/org.videolan.vlc/lua/
 
-### Types of Scripts
+# Types of Scripts
 
 | Name | Description | Install Subdirectory | Version Range |
 | ---- | ----------- | -------------------- | ------------- |
@@ -36,7 +36,7 @@ Scripts are placed into their own special folders in the VLC install directory. 
 ### Special Identifiers
 While a custom script is running, VLC will look for a number of different identifiers (names of functions or variables). How they are defined and implemented determines the look and functionality of a script, or whether the script runs at all. Different script types expect different identifiers to be defined, so see the type pages for more detail.
 
-### Modules
+# Modules
 In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3). Modules are available via the global `vlc` table, depending on the type of script that is running.
 
 | Name | Symbol(s) | Description | Availability |
