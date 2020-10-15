@@ -1,4 +1,7 @@
-# GetText Module
+---
+title: GetText Module
+---
+
 This modules allows access to the [gettext](https://en.wikipedia.org/wiki/Gettext) system implementation provided by VLC.  
 
 ----
