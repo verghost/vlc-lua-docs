@@ -340,7 +340,7 @@ Advance the player one frame.
 Get the list of audio tracks.
 
 ### Return vale
-List containing the audio tracks of the current media: uses the same format as [`get_video_tracks()`](#`get_video_tracks`).
+List containing the audio tracks of the current media: uses the same format as [`get_video_tracks()`](#get_video_tracks).
 
 ----
 ## `toggle_audio_track()`
@@ -407,7 +407,7 @@ Set subtitle delay for current subtitle track.
 Get the list of [Sub-Picture Unit (SPU)](https://en.wikibooks.org/wiki/Inside_DVD-Video/Subpicture_Streams) tracks.
 
 ### Return vale
-List containing the SPU tracks of the current media: uses the same format as [`get_video_tracks()`](#`get_video_tracks`).
+List containing the SPU tracks of the current media: uses the same format as [`get_video_tracks()`](#get_video_tracks).
 
 ----
 ## `toggle_spu_track()`
