@@ -22,7 +22,7 @@ end
 # Preamplifier
 The following methods control the EQ [preamp](https://en.wikipedia.org/wiki/Preamplifier).
 
-----
+
 ## `preampget()`
 Retrieve the current EQ preamp level, which is measured in decibels.
 
@@ -48,7 +48,7 @@ vlc.equalizer.preampset(level) -- set preamp to 12db
 - `level` Float representing the new level in decibels; a number between -20.0 and 20.0
 
 ----
-# Equalizer Bands 
+# Equalizer Bands
 The EQ is composed of several "bands", each of which modify a different frequency range.  
 Each EQ band is asssigned an ID number:
 
@@ -65,7 +65,7 @@ Each EQ band is asssigned an ID number:
 | 8 | 14 kHz |
 | 9 | 16 kHz |
 
-----
+
 ## `equalizerget()`
 Get EQ levels for all bands as a table. 
 

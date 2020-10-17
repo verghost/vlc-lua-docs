@@ -56,7 +56,7 @@ In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1
 | [Network](https://verghost.com/vlc-lua-docs/m/net)  | `net` | Various network methods | Extension, Interface |
 | [Object](https://verghost.com/vlc-lua-docs/m/object)  | `object` | Provides access to various objects | Extension, Interface, Meta, Service Discovery |
 | [OSD](https://verghost.com/vlc-lua-docs/m/osd)  | `osd` | On-screen display functionality (ex. Display OSD messages, modify channels) | Extension, Interface |
-| [Player](https://verghost.com/vlc-lua-docs/m/input) | `player` | Access the VLC player interface | Extension, Interface, Service Discovery |
+| [Player](https://verghost.com/vlc-lua-docs/m/player) | `player` | Access the VLC player interface (Called "input" pre 4.0) | Extension, Interface, Service Discovery |
 | [Playlist](https://verghost.com/vlc-lua-docs/m/playlist)  | `playlist` | Access and modify playlists | Extension, Interface |
 | [Random](https://verghost.com/vlc-lua-docs/m/rand)  | `rand` | Get random numbers/bytes | Extension, Interface |
 | [Services Discovery](https://verghost.com/vlc-lua-docs/m/sd)  | `sd` | Functions for service discovery scripts (i.e. add nodes, items) | Service Discovery |
