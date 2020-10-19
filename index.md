@@ -28,13 +28,13 @@ Scripts are placed into their own special folders in the VLC install directory. 
 
 | Name | Description | Install Subdirectory | Version Range |
 | ---- | ----------- | -------------------- | ------------- |
-| [Art](https://verghost.com/vlc-lua-docs/t/art) | ? | /lua/meta/art/ | 0.9+ |
-| [Extensions](https://verghost.com/vlc-lua-docs/t/extensions) | ? | /lua/extensions/ | 1.1+ |
-| [Interfaces](https://verghost.com/vlc-lua-docs/t/intf) | ? | /lua/intf/ | 0.9+ |
+| [Art](https://verghost.com/vlc-lua-docs/t/art) | Scripts called to download album/track artwork | /lua/meta/art/ | 0.9+ |
+| [Extensions](https://verghost.com/vlc-lua-docs/t/extensions) | Addons to VLC, found in the "Views" menu (has access to the [dialog](/vlc-lua-docs/m/dialog) module) | /lua/extensions/ | 1.1+ |
+| [Interfaces](https://verghost.com/vlc-lua-docs/t/intf) | Run in the background (custom interfaces must be enabled) | /lua/intf/ | 0.9+ |
 | [Meta Fetcher](https://verghost.com/vlc-lua-docs/t/fetcher) | ? | /lua/meta/fetcher | 1.1+ |
 | [Meta Reader](https://verghost.com/vlc-lua-docs/t/reader) | ? | /lua/meta/reader/ | 1.1+ |
-| [Playlist Parsers](https://verghost.com/vlc-lua-docs/t/playlist) | ? | /lua/playlist/ | 0.9+ |
-| [Services Discovery](https://verghost.com/vlc-lua-docs/t/sd) | ? | /lua/sd/ | 1.1+ |
+| [Playlist Parsers](https://verghost.com/vlc-lua-docs/t/playlist) | Scripts called to handle files when VLC is given a specific URL (e.g. when VLC gets http://somewebsite.com/playlist/id_string") | /lua/playlist/ | 0.9+ |
+| [Services Discovery](https://verghost.com/vlc-lua-docs/t/sd) | Used to generate media from a service (found on the sidebar) | /lua/sd/ | 1.1+ |
 
 ### Special Identifiers
 While a custom script is running, VLC will look for a number of different identifiers (names of functions or variables). How they are defined and implemented determines the look and functionality of a script, or whether the script runs at all. Different script types expect different identifiers to be defined, so see the type pages for more detail.
