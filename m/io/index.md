@@ -66,7 +66,7 @@ end
 List of file/folder names (empty if directory is empty)
 
 ----
-## `unlink`
+## `unlink()`
 Similar to [os.remove](https://www.lua.org/manual/5.1/manual.html#pdf-os.remove); unlinks/removes a file.
 
 ### Parameters
@@ -91,6 +91,7 @@ Modifiers can also be added to modes to change the way they work
 - 'x' Exclusive open; forces method failure if file exists 
 - 't' Text Mode; only text will be read from the file (overrides 'b')
 - 'b' Binary mode (overrides 't')
+
 As an example, `f = open("hello.exe", 'rt')` would open, but `f:read("*a")` would not return all data from the file (assuming hello.exe was a binary executable).
 
 ----
@@ -117,6 +118,7 @@ vlc.msg.info("There are " .. string.len(text) .. " characters in the file!")
 			- "*l" Read a line from the current position in the file
 			- "*n" Read a number from the file
 			- "*a" Read all data from the file (limited by the value of VLC's internal `SIZE_MAX` constant)
+	
 	Default value is "*l"
 
 ### Return value
