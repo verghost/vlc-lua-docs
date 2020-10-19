@@ -11,6 +11,9 @@ description
 ```lua
 ```
 
+### Parameters
+- `param`
+
 ### Return value
 something
 
@@ -21,6 +24,9 @@ description
 ### Usage
 ```lua
 ```
+
+### Parameters
+- `param`
 
 ### Return value
 something
