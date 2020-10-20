@@ -1,7 +1,8 @@
 ---
 title: Network Module
 ---
-Network utilities. Many of the following methods are analogus to utilities in Linux.
+Network utilities. Many of the following methods are analogus to utilities in Linux.  
+NOTE: File descriptors are passed to (and returned by) functions as non-negative integer values.
 
 
 # TCP Connections
@@ -29,7 +30,7 @@ end
 - `port` Port to listen on 
 
 ### Return value
-A [listen object](#listenobject)
+A [listen object](#listen-object)
 
 ----
 ## `connect_tcp()`
@@ -78,7 +79,7 @@ String contianing data read from TCP socket or `nil` if error occurred
 
 ----
 ## `close()`
-Close connected file descriptor.
+Close an open connection.
 
 ### Parameters
 - `fd` File descriptor of connection to be closed
@@ -90,7 +91,7 @@ Some extra functions, most of which are non-network or deprecated.
 ## `poll()`
 Polls file descriptor(s); similar to [poll](https://www.man7.org/linux/man-pages/man2/poll.2.html).  
 Parameter is modified to include `revents` (returned events) which indicate what type of IO is available for the file descriptor.  
-All events refer to [poll event flags](#polleventflags).
+All events refer to [poll event flags](#poll-event-flags).
 
 ### Parameters
 - `fd-events` Table with `{ fd: events }` entries, where:
@@ -102,7 +103,7 @@ Integer value; positive or zero on success, negative on failure
 
 ----
 ## `read()`
-Read data from file descriptor.  
+Read data from a file.  
 Not available on Windows.
 
 ### Parameters
@@ -115,6 +116,7 @@ String containing the read data or `nil`
 
 ----
 ## `write()`
+Write data to a file.  
 Not available on Windows.
 
 ### Parameters
