@@ -2,4 +2,4 @@
 
 Documentation for VLC's Lua plugins.
 
-This can be found online on [my website](https://verghost.com/vlc-lua-docs).
+A version of this can be found on [verghost.com](https://verghost.com/vlc-lua-docs).
