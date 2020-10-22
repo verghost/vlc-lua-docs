@@ -1,1 +1,4 @@
-# Services Discovery Plugin
+---
+title: Services Discovery Scripts
+project: VLC Lua Docs
+---

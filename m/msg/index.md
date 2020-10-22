@@ -1,5 +1,6 @@
 ---
 title: Messages Module
+project: VLC Lua Docs
 ---
 Output text to the messages window.  
 The window can be opened at Tools->Messages or via Ctrl+M.

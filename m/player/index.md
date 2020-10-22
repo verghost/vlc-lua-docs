@@ -1,5 +1,6 @@
 ---
 title: Player Module
+project: VLC Lua Docs
 ---
 ###### NOTE: Called "input" pre 4.0; access would be via `vlc.input`.
 Used to handle the VLC player interface.

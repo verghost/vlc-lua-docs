@@ -1,5 +1,6 @@
 ---
 title: Miscellaneous Module
+project: VLC Lua Docs
 ---
 Disparate assortment of VLC utilities only available in Interface scripts; organized under a module for convenience.
 

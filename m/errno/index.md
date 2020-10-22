@@ -1,5 +1,6 @@
 ---
 title: ErrNo Module
+project: VLC Lua Docs
 ---
 
 When calling a vlc method, sometimes error codes can be returned. This module provides access to a list of these potential error numbers/codes. So far, these (as far as I know) are only useful for the [IO module](../io).

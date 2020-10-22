@@ -1,7 +1,8 @@
 ---
 title: Objects Module
+project: VLC Lua Docs
 ---
-Quick access to important objects.
+Useful VLC objects.
 
 
 ## `player()`
@@ -36,4 +37,5 @@ The aout object or `nil`
 Get the vout object.
 
 ### Return value
-The vout object or `nil`
+The vout object or `nil`  
+VOut has variables "aspect-ratio", "autoscale", "crop", "crop-bottom", "crop-top", "crop-left", "crop-right", "deinterlace", "deinterlace-mode", "sub-margin", "secondary-sub-margin", "zoom"

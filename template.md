@@ -1,5 +1,6 @@
 ---
 title: MODULE
+project: VLC Lua Docs
 ---
 Description
 

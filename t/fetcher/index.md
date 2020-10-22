@@ -1,1 +1,4 @@
-# Meta Fetcher Plugin
+---
+title: Meta Fetcher Scripts
+project: VLC Lua Docs
+---

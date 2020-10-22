@@ -4,8 +4,9 @@ title: VLC Lua Docs
 The aim of these docs is to (hopefully) help aspiring developers. All info in these docs has been compiled from a number of disparate readme files, [VideoLAN Forum](https://forum.videolan.org/) posts, [the Wiki](https://wiki.videolan.org/), [code from existing VLC addons](https://addons.videolan.org) and of course my own tinkering and staring at the source code.
 
 ### **A Few Thing To Note**
-- This is NOT a Lua tutorial. There are plenty of good ones out there, though.
-- This documentation intentionally overlooks VLC [skins](https://www.videolan.org/vlc/skins.html). This is mainly because they already have their own [skin editor application](https://www.videolan.org/vlc/skins.html) and are a little outdated (last release was 25-Aug-2009).
+- The information in these docs is based on VLC 4.0.0, which may differ significantly from earlier versions (in some modules).
+- This is NOT a Lua tutorial. There are plenty of [good ones](http://lua-users.org/wiki/TutorialDirectory) out there, though.
+- This documentation intentionally overlooks VLC [skins](https://www.videolan.org/vlc/skins.html). This is mainly because they already have their own [skin editor application](https://www.videolan.org/vlc/skineditor.html) and are a little outdated (last release was 25-Aug-2009).
 - The VLC app has undergone lots of changes, so Lua modules have come, gone and been moved since version. In these docs, I refer to the [latest release](https://get.videolan.org/vlc/last/) as of October 2020.
 - Finally, for the sake of streamlining terminology, I'm going to use "addon", "plugin", "extension", etc as categories of "scripts".
 
@@ -70,7 +71,7 @@ In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1
 | [XML](https://verghost.com/vlc-lua-docs/m/xml)  | `xml` | [XML](https://en.wikipedia.org/wiki/XML) reader, can be replaced by simplexml | All types |
 
 ### Non-VLC Modules
-Outside of the modules in the global `vlc` table, VLC provides a few other useful Lua modules that offer some tools to aid in developing more complex scripts. These modules are found in VLC_INSTALL_PATH/lua/modules/ and must be explicitly required in lua code using the built-in [require](https://www.lua.org/pil/8.1.html) function.
+Outside of the modules in the global `vlc` table, VLC provides some [Lua modules](https://www.lua.org/manual/5.1/manual.html#5.3) to aid in developing more complex scripts. These modules are found in VLC_INSTALL_PATH/lua/modules/ and must be explicitly required in lua code using the built-in [require](https://www.lua.org/pil/8.1.html) function. Furthermore, any custom Lua modules placed in the lua/modules folder may also be required in a Lua script.
 
 ```lua
 require "module1" -- This works

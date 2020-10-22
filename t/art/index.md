@@ -1,1 +1,4 @@
-# Art Plugin Type
+---
+title: Art Scripts
+project: VLC Lua Docs
+---

@@ -1,5 +1,6 @@
 ---
 title: HTTPd Module
+project: VLC Lua Docs
 ---
 
 An [HTTP daemon](https://www.webopedia.com/TERM/H/HTTPD.html) for use in Lua interfaces. Connects to VLC's internal [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) server API.
