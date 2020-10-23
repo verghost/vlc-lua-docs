@@ -40,7 +40,7 @@ Boolean value: `true` if metadata has been preparsed, `false` otherwise
 
 ----
 ## `item:metas()`
-Get VLC-specific mata data of current item as table. Table keys are only included in the table if values exist.  
+Get VLC-specific mata data of current item as table. Table keys are only included if values exist.  
 Table keys are: 
 - `title` 
 - `artist` 
@@ -76,7 +76,7 @@ end
 ```
 
 ### Return value
-Table containing the VLC-specific metadata of the current item
+Table containing the VLC-specific metadata of the item
 
 ----
 ## `item:set_meta()`
@@ -144,7 +144,23 @@ print("Current amount read: " .. tostring(stats.read_packets))
 
 ### Return value
 Object representing statistics of an item; has the following fields:
-.read_packets, .read_bytes, .input_bitrate, .demux_read_packets, .demux_read_bytes, .demux_bitrate, .demux_corrupted, .demux_discontinuity, .decoded_audio, .decoded_video, .displayed_pictures, .lost_pictures, .sent_packets, .sent_bytes, .send_bitrate, .played_abuffers, .lost_abuffers.
+- `.read_packets`
+- `.read_bytes`
+- `.input_bitrate`
+- `.demux_read_packets`
+- `.demux_read_bytes`
+- `.demux_bitrate`
+- `.demux_corrupted`
+- `.demux_discontinuity`
+- `.decoded_audio`
+- `.decoded_video`
+- `.displayed_pictures`
+- `.lost_pictures`
+- `.sent_packets`
+- `.sent_bytes`
+- `.send_bitrate`
+- `.played_abuffers`
+- `.lost_abuffers`
 
 ----
 ## `item:info()`
