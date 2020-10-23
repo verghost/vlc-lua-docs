@@ -21,7 +21,7 @@ Provided by the XML Object, used to read and parse XML data.
 Create XML reader for a given stream.
 
 ### Parameters
-- `stream` [Stream object](../stream/#streamobject)
+- `stream` [Stream object](/vlc-lua-docs/m/stream/#streamobject)
 
 ### Return value
 XML Reader object
