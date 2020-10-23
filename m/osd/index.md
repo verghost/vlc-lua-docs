@@ -5,7 +5,6 @@ project: vlc-lua-docs
 Utilities to control On-Screen-Display (OSD).
 
 
-----
 # OSD Elements
 
 
