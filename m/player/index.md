@@ -8,7 +8,7 @@ Used to handle the VLC player interface.
 
 ----
 # Player Item
-This item is an instance of the player class; used to get information on the current player interface and manage meta data.
+This item is an instance of the player class; used to get information on the current player interface and manage metadata.
 
 
 ## `item()`
@@ -24,8 +24,8 @@ Object representing the current VLC player item or `nil` if no item is loaded
 
 ----
 ## `item:is_preparsed()`
-Determine if item meta data has been preparsed.  
-Preparsing loads meta data from files opened with VLC before it is explicitly requested by the user; it is on by default.
+Determine if item metadata has been preparsed.  
+Preparsing loads metadata from files opened with VLC before it is explicitly requested by the user; it is on by default.
 
 ### Usage
 ```lua
@@ -36,12 +36,35 @@ end
 ```
 
 ### Return value
-Boolean value: `true` if meta data has been preparsed, `false` otherwise
+Boolean value: `true` if metadata has been preparsed, `false` otherwise
 
 ----
 ## `item:metas()`
 Get VLC-specific mata data of current item as table. Table keys are only included in the table if values exist.  
-Table keys are: "title", "artist", "genre", "copyright", "album", "track_number", "description", "date", "setting", "url", "language", "now_playing", "publisher", "encoded_by", "artwork_url", "track_id", "track_total", "director", "season", "episode", "show_name", "actors" and "filename" (value includes extension).
+Table keys are: 
+- `title` 
+- `artist` 
+- `genre` 
+- `copyright` 
+- `album` 
+- `track_number` 
+- `description` 
+- `date` 
+- `setting` 
+- `url` 
+- `language` 
+- `now_playing` 
+- `publisher` 
+- `encoded_by` 
+- `artwork_url` 
+- `track_id` 
+- `track_total` 
+- `director` 
+- `season` 
+- `episode` 
+- `show_name` 
+- `actors` 
+- `filename` (Includes file extension)
 
 ### Usage
 ```lua
@@ -53,11 +76,11 @@ end
 ```
 
 ### Return value
-Table containing the VLC-specific meta data of the current item
+Table containing the VLC-specific metadata of the current item
 
 ----
 ## `item:set_meta()`
-Modify VLC-specific meta data of current item. Does not write new meta data to actual file; change is internal-only.
+Modify VLC-specific metadata of current item. Does not write new metadata to the actual file.
 
 ### Usage
 ```lua
@@ -66,8 +89,8 @@ p_item:set_meta("album", "new album name")
 ```
 
 ### Parameters
-- `key` String; key naming the meta data to be changed
-- `value` String containing the new meta data
+- `key` Name of the metadata to be changed
+- `value` New metadata value
 
 ----
 ## `item:uri()`
@@ -255,7 +278,7 @@ vlc.player.seek_by_time_relative(1000000) -- adjust one second ahead
 
 ----
 # Titles and Chapters
-Methods for changing the player based on title and chapter meta data.
+Methods for changing the player based on title and chapter metadata.
 
 
 ## `get_title_index()`
@@ -433,4 +456,4 @@ local p_item = vlc.player.item()
 ```
 
 ### Return value
-Boolean: true if input exists
+Boolean: `true` if input exists

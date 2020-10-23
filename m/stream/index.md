@@ -69,7 +69,7 @@ String containing the data that was read from the stream, otherwise `nil` on fai
 
 ----
 ## `stream:readline()`
-Like [stream:read()](#streamread), but will only return the first line of any given file (i.e., until return/newline).
+Like [stream:read()](#streamread), but will only return the first line of any given file (i.e. until return/newline).
 
 ### Return value
 String containing the first line from a stream, otherwise `nil` on read failure

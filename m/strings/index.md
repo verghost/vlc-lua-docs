@@ -66,7 +66,7 @@ A table containing the following fields:
 - `path` URL path
 - `option` URL options
 
-NOTE: Fields and values are only included in the resulting table if they exist in given URL.
+NOTE: Fields and values are only included in the resulting table if they exist in the given URL.
 
 ----
 ## `resolve_xml_special_chars()`

@@ -31,7 +31,7 @@ An [item object](#service-discovery-items)
 
 ----
 ## Item Setters
-Each variable relating to an item's metadata settable via a function call. Each function's name conforms to the template `item:set_varname(value)`, where "value" is a string containing the value to assign and "varname" is metadata to set.
+Each variable relating to an item's metadata settable via a function call. Each function's name conforms to the template `item:set_name(value)`, where "value" is a string containing the value to assign and "name" is the name of the [metadata](#item-metadata) to set.
 
 ### Example
 ```lua
@@ -68,7 +68,7 @@ Items can have values assigned to the following metadata fields:
 
 ----
 # Service Discovery Nodes
-Nodes are the item group constructs of a service discovery scripts; they can be though of as folder/directories or as playlists.  
+Nodes can be thought of as folder/directories/playlists. Each child of a node can be either an [item](#service-discovery-items) or another node.  
 Each node has the following fields:
 - `.title` The node's name
 - `.arturl` URL to the node's playlist art
@@ -90,7 +90,12 @@ A [node object](#service-discovery-nodes)
 Add an child item to a node.
 
 ### Parameters
-Same as [add_item()](#add_item)
+- `info` Table with the following keys:
+	- `path` String containing URI/URL pointing to the item's media
+	- Optional keys
+		- Any [Metadata](#item-metadata) field
+		- `duration` Number indicating the item's duration in seconds
+		- `uiddata` String to build the input uid
 
 ### Return value
 An [item object](#service-discovery-items)
@@ -100,7 +105,10 @@ An [item object](#service-discovery-items)
 Add a child node to a node.
 
 ### Parameters
-Same as [add_node()](#add_node)
+- `info` Table defining values for the node's fields: 
+	- `title`
+	- Optional keys
+		- `arturl`
 
 ### Return value
 A [node object](#service-discovery-nodes)

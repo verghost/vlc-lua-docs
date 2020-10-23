@@ -19,4 +19,4 @@ Get random bytes.
 - `size` Integer indicating the number of random bytes to retrieve
 
 ### Return value
-String containing a sequence of (`size`) random bytes
+String containing a random sequence bytes of length `size`

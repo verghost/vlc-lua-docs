@@ -20,12 +20,8 @@ Provided by the XML Object, used to read and parse XML data.
 ## `xml:create_reader()`
 Create XML reader for a given stream.
 
-### Usage
-```lua
-```
-
 ### Parameters
-- `stream` [Stream object](/vlc-lua-docs/m/stream/#streamobject)
+- `stream` [Stream object](../stream/#streamobject)
 
 ### Return value
 XML Reader object
