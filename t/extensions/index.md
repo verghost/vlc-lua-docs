@@ -1,4 +1,4 @@
 ---
 title: Extension Scripts
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---

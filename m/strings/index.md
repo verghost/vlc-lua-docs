@@ -1,6 +1,6 @@
 ---
 title: Strings Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 String utilities.
 

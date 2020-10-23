@@ -1,6 +1,6 @@
 ---
 title: Dialog Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 
 <!-- 

@@ -1,6 +1,6 @@
 ---
 title: Network Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Network utilities. Many of the following methods are analogus to utilities in Linux.  
 NOTE: File descriptors are passed to (and returned by) functions as non-negative integer values.

@@ -1,6 +1,6 @@
 ---
 title: Services Discovery Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Utilities for [Service Discovery](/vlc-lua-docs/t/sd) scripts.
 

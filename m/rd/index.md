@@ -1,6 +1,6 @@
 ---
 title: Renderer Discovery Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: Playlist Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Methods to control and manage the VLC playlist.
 

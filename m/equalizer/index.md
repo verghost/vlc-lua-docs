@@ -1,6 +1,6 @@
 ---
 title: Equalizer Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Provides access to VLC's [equalizer](https://en.wikipedia.org/wiki/Equalization_(audio)) (Tools->Effects and Filters->Audio Effects->Equalizer).  
 Control EQ, levels and preamp settings. Each EQ componenet has methods that can modify them.

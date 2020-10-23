@@ -1,6 +1,6 @@
 ---
 title: Volume Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Handle VLC media volume.
 

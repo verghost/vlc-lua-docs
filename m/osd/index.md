@@ -1,6 +1,6 @@
 ---
 title: OSD Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Utilities to control On-Screen-Display (OSD).
 

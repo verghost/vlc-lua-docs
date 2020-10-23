@@ -1,6 +1,6 @@
 ---
 title: VLM Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 The Lua [VideoLAN Manager](https://www.videolan.org/developers/vlc/doc/doxygen/html/group__server.html) wrapper.
 

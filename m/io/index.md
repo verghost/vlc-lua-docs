@@ -1,6 +1,6 @@
 ---
 title: IO Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Input/Output to/from local file system.  
 Error codes returned from methods in this module will correspond to [errno](/vlc-lua-docs/m/errno) module.

@@ -1,6 +1,6 @@
 ---
 title: Objects Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Useful VLC objects.
 

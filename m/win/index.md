@@ -1,6 +1,6 @@
 ---
 title: Windows Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Microsoft Windows specific utilities.  
 NOTE: Only available in Widnows builds of VLC.

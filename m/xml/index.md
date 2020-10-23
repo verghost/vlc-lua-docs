@@ -1,6 +1,6 @@
 ---
 title: XML Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Handle [XML](https://en.wikipedia.org/wiki/XML) documents.  
 NOTE: The simplexml module can also be used to parse XML documents.

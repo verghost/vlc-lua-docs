@@ -1,6 +1,6 @@
 ---
 title: Random Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Sources for random data in VLC Lua scripts.
 

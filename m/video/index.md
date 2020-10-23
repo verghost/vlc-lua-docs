@@ -1,6 +1,6 @@
 ---
 title: Video Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Functions relating to the VLC video U.I.
 

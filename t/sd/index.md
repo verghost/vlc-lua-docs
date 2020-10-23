@@ -1,4 +1,4 @@
 ---
 title: Services Discovery Scripts
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---

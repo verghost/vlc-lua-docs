@@ -1,6 +1,6 @@
 ---
 title: Variables Module
-project: VLC Lua Docs
+project: vlc-lua-docs
 ---
 Create and manipulate variables in [VLC objects](/vlc-lua-docs/m/objects) ([Lua userdata](https://www.lua.org/pil/28.1.html) of the type "vlc_object").  
 
