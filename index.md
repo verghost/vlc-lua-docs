@@ -55,7 +55,7 @@ In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1
 | [Messages](https://verghost.com/vlc-lua-docs/m/msg)  | `msg` | Output to the Messages console (Tools->Messages) | All types |
 | [Miscellaneous](https://verghost.com/vlc-lua-docs/m/misc)  | `misc` | Uncategroized functionality | Interface |
 | [Network](https://verghost.com/vlc-lua-docs/m/net)  | `net` | Various network methods | Extension, Interface |
-| [Object](https://verghost.com/vlc-lua-docs/m/object)  | `object` | Provides access to various objects | Extension, Interface, Meta, Service Discovery |
+| [Objects](https://verghost.com/vlc-lua-docs/m/objects)  | `object` | Provides access to various objects | Extension, Interface, Meta, Service Discovery |
 | [OSD](https://verghost.com/vlc-lua-docs/m/osd)  | `osd` | On-screen display functionality (ex. Display OSD messages, modify channels) | Extension, Interface |
 | [Player](https://verghost.com/vlc-lua-docs/m/player) | `player` | Access the VLC player interface (Called "input" pre 4.0) | Extension, Interface, Service Discovery |
 | [Playlist](https://verghost.com/vlc-lua-docs/m/playlist)  | `playlist` | Access and modify playlists | Extension, Interface |
