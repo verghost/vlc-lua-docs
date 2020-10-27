@@ -17,7 +17,7 @@ project: vlc-lua-docs
 ### [Player (Also called Input)](https://verghost.com/vlc-lua-docs/m/player)
 ### [Playlist](https://verghost.com/vlc-lua-docs/m/playlist)
 ### [Random](https://verghost.com/vlc-lua-docs/m/rand)
-### [Renderer Discover]()
+### [Renderer Discover](https://verghost.com/vlc-lua-docs/m/rd)
 ### [Services Discovery](https://verghost.com/vlc-lua-docs/m/sd)
 ### [Stream](https://verghost.com/vlc-lua-docs/m/stream)
 ### [Strings](https://verghost.com/vlc-lua-docs/m/strings)
