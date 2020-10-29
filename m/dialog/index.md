@@ -106,6 +106,22 @@ end
 # Adding Widgets
 Widgets are small components that provide most of utility and U.I. of the dialog window. They are added by calling the `add_` methods of the dialog object. The widgets are arranged according to a grid/table system, with each widget on a specific column and row.
 
+## Widget Types
+
+| Type | Add Method | Widget Methods |
+| ---- | ---------- | -------------- |
+| Button | [add_button()](#dialogadd_button) | [get_text()](#widgetget_text), [set_text()](#widgetset_text) |
+| Label | [add_label()](#dialogadd_label) | [get_text()](#widgetget_text), [set_text()](#widgetset_text) |
+| HTML | [add_html()](#dialogadd_html) | [get_text()](#widgetget_text), [set_text()](#widgetset_text) |
+| Text Input | [add_text_input()](#dialogadd_text_input) | [get_text()](#widgetget_text), [set_text()](#widgetset_text) |
+| Password | [add_password()](#dialogadd_password) | [get_text()](#widgetget_text), [set_text()](#widgetset_text) |
+| Check Box | [add_check_box()](dialogadd_check_box) | [get_text()](#widgetget_text), [set_text()](#widgetset_text), [get_checked()](#widgetget_checked), [set_checked()](#widgetset_checked) |
+| Dropdown | [add_dropdown()](#dialogadd_dropdown) | [clear()](#widgetclear), [get_value()](#widgetget_value), [add_value()](#widgetadd_value) |
+| List | [add_list()](dialogadd_list) | [get_selection()](#widgetget_selection), [clear()](#widgetclear), [get_value()](#widgetget_value) (4.0+), [add_value()](#widgetadd_value) (4.0+) |
+| Image | [add_image()](#dialogadd_image) | None |
+| Spin Icon | [add_spin_icon()](#dialogadd_spin_icon) | [animate()](#widgetanimate), [stop()](#widgetstop) |
+
+----
 ## Widget Parameters
 These are optional when creating a new widget, but can be specified to customize arrangments and widget sizes.
 Here they are, in order:
@@ -311,7 +327,7 @@ A widget object corresponding to the new widget
 
 ----
 # Modifying Widgets
-Widget objects have their own methods which can modify widgets already on the dialog.
+Widget objects have their own methods thatcan get and modify their data. The methods that are available differ depending on the widget type.
 
 ----
 ## `widget:get_text()`
@@ -388,7 +404,7 @@ A string (or nil) representing the text value of the selected item
 
 ----
 ## `widget:add_value()`
-Add an item to the widget
+Add an item to the widget  
 Applies to the follwing types of widget: dropdown and list (4.0+).
 
 ### Usage
