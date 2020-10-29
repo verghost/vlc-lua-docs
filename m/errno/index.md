@@ -3,8 +3,9 @@ title: ErrNo Module
 project: vlc-lua-docs
 ---
 
-When calling a vlc method, sometimes error codes can be returned. This module provides access to a list of these potential error numbers/codes. So far, these (as far as I know) are only useful for the [IO module](../io).
-List of error values:
+When calling a vlc method, sometimes error codes can be returned. This module provides access to a list of these potential error numbers/codes.  
+These are only useful for the [IO module](../io) (as far as I know).  
+List of error values provided by this module:
 
 - `vlc.errno.ENOENT` No such file or directory
 - `vlc.errno.EEXIST` File exists already

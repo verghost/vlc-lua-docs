@@ -2,7 +2,7 @@
 title: Stream Module
 project: vlc-lua-docs
 ---
-Stream handling.
+VLC module for stream handling.
 
 
 # Stream Types
@@ -21,7 +21,7 @@ local s = vlc.stream("http://www.videolan.org/")
 - `url` String containing a URL to open
 
 ### Return value
-A [Stream object](#streamobject)
+A [Stream object](#stream-object)
 
 ----
 ## `vlc.memory_stream()`
@@ -36,7 +36,7 @@ local s = vlc.memory_stream("SGVsbG8sIHdvcmxkIQ==") -- "Hello, world!"
 - `data` String containing some data
 
 ### Return value
-A Memory [Stream object](#streamobject)
+A Memory [Stream object](#stream-object)
 
 ----
 ## `vlc.directory_stream()`
@@ -51,7 +51,7 @@ local s = vlc.memory_stream("/home/guest/music")
 - `path` String containing a path in the local directory
 
 ### Return value
-A Directory [Stream object](#streamobject)
+A Directory [Stream object](#stream-object)
 
 ----
 # Stream Object

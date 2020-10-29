@@ -2,7 +2,7 @@
 title: Variables Module
 project: vlc-lua-docs
 ---
-Create and manipulate variables in [VLC objects](/vlc-lua-docs/m/objects) ([Lua userdata](https://www.lua.org/pil/28.1.html) of the type "vlc_object").  
+Create and manipulate variables in [VLC objects](/vlc-lua-docs/m/objects), which are [Lua userdata](https://www.lua.org/pil/28.1.html) of the type "vlc_object".  
 
 
 ## `get()`
@@ -30,7 +30,7 @@ Value of `name` in `object` or `nil`
 
 ----
 ## `get_list()`
-Get the value list (values the variable can be set to) and text list (dsiplay text for values) from a variable in a VLC object.
+Get the value list (values the variable can be set to) and text list (display text for values) from a variable in a VLC object.
 
 ### Usage
 ```lua
@@ -72,7 +72,7 @@ Create a variable in a VLC object.
 ### Parameters
 - `object` VLC object
 - `name` Name of new variable
-- `value` Value to assing to the new variable
+- `value` Value to assign to the new variable
 
 ### Return value
 Two values that indicate how the create operation went:
@@ -83,7 +83,7 @@ Can also return `nil` in case of `nil` assignment
 
 ----
 ## `inherit()`
-Determine the value inherited by a given vairable in a VLC object.
+Determine the value inherited by a given variable in a VLC object.
 
 ### Parameters
 - `object` VLC object (If object is unset, the current module's object will be used)

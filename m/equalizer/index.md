@@ -17,7 +17,7 @@ end
 ```
 
 ### Parameters
-`state` Boolean indicating whether the EQ should be enabled
+- `state` Boolean indicating whether the EQ should be enabled
 
 ----
 # Preamplifier
@@ -50,8 +50,7 @@ vlc.equalizer.preampset(level) -- set preamp to 12db
 
 ----
 # Equalizer Bands
-The EQ is composed of several "bands", each of which modify a different frequency range.  
-Each EQ band is asssigned an ID number:
+The EQ is composed of several "bands", each of which modify a different frequency range. Each EQ band is asssigned an ID number:
 
 | Band ID | Frequency |
 | ------- | --------- |
@@ -66,7 +65,7 @@ Each EQ band is asssigned an ID number:
 | 8 | 14 kHz |
 | 9 | 16 kHz |
 
-
+----
 ## `equalizerget()`
 Get EQ levels for all bands as a table. 
 
@@ -99,7 +98,7 @@ vlc.equalizer.equalizerset(4, new_4_level)
 # Presets
 The VLC EQ supports presets, which allows users to save their custom EQ settings.
 
-----
+
 ## `presets()`
 Get the names of available EQ presets.
 
@@ -119,4 +118,4 @@ Table containing the names of available EQ presets
 Set the EQ to a specified preset.
 
 ### Parameters
-`id` Integer pointing to position of the preset in the preset list (found programatically with `presets()`). Must be greater than 0 and less than the total number of presets
+- `id` Integer pointing to position of the preset in the preset list (found programatically with [`presets()`](#presets-1)). Must be greater than 0 and less than the total number of presets

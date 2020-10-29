@@ -19,6 +19,13 @@ end
 ## `next()`
 Play next track.
 
+### Usage
+```lua
+if should_goto_next then
+	vlc.playlist.next()
+end
+```
+
 ----
 ## `skip()`
 Skip one or more tracks.
@@ -122,7 +129,7 @@ Alias of [goto()](#goto) provided for all Lua versions.
 Add one or more items to the playlist, tracks are played when added.
 
 ### Parameters
-- `...` One or more [playlist items](#playlistitems) to add to the playlist
+- `...` One or more [playlist items](#playlist-items) to add to the playlist
 
 ### Return value
 Integer value indicating how many items were added to the playlist
@@ -139,14 +146,14 @@ Get an item from the current playlist.
 - `id` Integer value; item identifier
 
 ### Return value
-The specified [playlist item](#playlistitems)
+The specified [playlist item](#playlist-items)
 
 ----
 ## `list()`
 Get list of all playlist items in current playlist.
 
 ### Return value
-List of all the [playlist items](#playlistitems) in the current playlist
+List of all the [playlist items](#playlist-items) in the current playlist
 
 ----
 ## `current()`
@@ -160,14 +167,23 @@ Integer value: identifier of the current playlist item
 Get the current playlist item.
 
 ### Return value
-The current [playlist item](#playlistitems)
+The current [playlist item](#playlist-items)
 
 ----
 ## `sort()`
 Sort the current playlist according to a given key.
 
 ### Parameters
-- `key` String containing the sorting key; must be one of: `id`, `title`, `title nodes first`, `artist`, `genre`, `random`, `duration`, `title numeric`, `album`
+- `key` String containing the sorting key; must be one of: 
+	- `id`
+	- `title`
+	- `title nodes first`
+	- `artist`
+	- `genre`
+	- `random`
+	- `duration`
+	- `title numeric`
+	- `album`
 
 ### Return value
 Two values that indicate how the sort operation went:
@@ -179,7 +195,7 @@ Two values that indicate how the sort operation went:
 Get the status of the current playlist.
 
 ### Return value
-String literal value, one of: `stopped`, `started`, `playing`, `paused`, `stopping`, `unknown`
+String literal value, one of: `"stopped"`, `"started"`, `"playing"`, `"paused"`, `"stopping"`, `"unknown"`
 
 ----
 ## `delete()`
@@ -195,7 +211,7 @@ Two values that indicate how the delete operation went:
 
 ----
 ## `move()`
-Move a playlist item. This operaiton shifts the target item by one if the current item is before the target.
+Move a playlist item. This operation shifts the target item by one if the current item is before the target.
 
 ### Parameters
 - `id` Integer value; item identifier

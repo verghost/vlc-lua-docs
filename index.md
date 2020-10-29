@@ -4,11 +4,9 @@ title: VLC Lua Docs
 The aim of these docs is to (hopefully) help aspiring developers. All info in these docs has been compiled from a number of disparate readme files, [VideoLAN Forum](https://forum.videolan.org/) posts, [the Wiki](https://wiki.videolan.org/), [code from existing VLC addons](https://addons.videolan.org) and of course my own tinkering and staring at the source code.
 
 ### **A Few Thing To Note**
-- The information in these docs is based on VLC 4.0.0, which may differ significantly from earlier versions (in some modules).
+- The information in these docs is based on VLC 4.0.0, so these docs may differ significantly from earlier versions of the Lua API.
 - This is NOT a Lua tutorial. There are plenty of [good ones](http://lua-users.org/wiki/TutorialDirectory) out there, though.
-- This documentation intentionally overlooks VLC [skins](https://www.videolan.org/vlc/skins.html). This is mainly because they already have their own [skin editor application](https://www.videolan.org/vlc/skineditor.html) and are a little outdated (last release was 25-Aug-2009).
-- The VLC app has undergone lots of changes, so Lua modules have come, gone and been moved since version. In these docs, I refer to the [latest release](https://get.videolan.org/vlc/last/) as of October 2020.
-- Finally, for the sake of streamlining terminology, I'm going to use "addon", "plugin", "extension", etc as categories of "scripts".
+- The version of these docs on verghost.com might not be the most recent version. Changes are made to [this repo](https://github.com/verghost/vlc-lua-docs/) and are pulled as a subtree.
 
 # Script Basics
 There are a few types of lua scripts each with their own page instead of laying everything out here. I will use this page to cover the basics.
@@ -48,8 +46,8 @@ In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1
 | [Configuration](https://verghost.com/vlc-lua-docs/m/config) | `config` | Access and modify VLC configuration options | Extension, Interface |
 | [Dialog](https://verghost.com/vlc-lua-docs/m/dialog) | `dialog` | Interface to the DialogUI object | Extension |
 | [Equalizer](https://verghost.com/vlc-lua-docs/m/equalizer) | `equalizer` | Access and modify equalizer settings and presets | Interface |
-| [GetText](https://verghost.com/vlc-lua-docs/m/gettext) | `gettext` | Alias for libvlc [gettext](https://en.wikipedia.org/wiki/Gettext) | Interface, Service Discovery |
 | [Errno](https://verghost.com/vlc-lua-docs/m/errno) | `errno` | Error values | Extension, Interface |
+| [GetText](https://verghost.com/vlc-lua-docs/m/gettext) | `gettext` | Alias for libvlc [gettext](https://en.wikipedia.org/wiki/Gettext) | Interface, Service Discovery |
 | [HTTPd](https://verghost.com/vlc-lua-docs/m/httpd)  | `httpd` | Interface to the VLC HTTP Daemon constructor | Interface |
 | [I/O](https://verghost.com/vlc-lua-docs/m/io)  | `io` | Input/Output (i.e. file read/write, directories, etc...) | Extension, Interface |
 | [Messages](https://verghost.com/vlc-lua-docs/m/msg)  | `msg` | Output to the Messages console (Tools->Messages) | All types |

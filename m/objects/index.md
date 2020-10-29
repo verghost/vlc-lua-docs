@@ -6,7 +6,8 @@ Useful VLC objects.
 
 
 ## `player()`
-Get the [player item object](/vlc-lua-docs/m/player/#item).
+Get the [player](../player/) object. Not to be confused with the [player item object](../player/#item).
+NOTE: Pre 4.0.0, this was `vlc.object.input()`
 
 ### Return value
 A player item object if input exists, otherwise `nil`
@@ -16,7 +17,7 @@ A player item object if input exists, otherwise `nil`
 Get the playlist object.
 
 ### Return value
-Playlist object
+Playlist object or `nil`
 
 ----
 ## `libvlc()`

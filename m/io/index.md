@@ -3,7 +3,7 @@ title: IO Module
 project: vlc-lua-docs
 ---
 Input/Output to/from local file system.  
-Error codes returned from methods in this module will correspond to [errno](/vlc-lua-docs/m/errno) module.
+Error codes returned from methods in this module will correspond to the [ErrNo](../errno) module.
 
 
 ## `open()`
@@ -15,7 +15,7 @@ local f = open("hello.txt", 'rt') -- only read text
 ```
 
 ### Parameters
-- `path` String containing path to file
+- `path` String containing the path to a file
 - Optional
 	- `mode` String specifying which [mode](#filemodes) in which to open the file; defaults to 'r'
 
@@ -46,7 +46,7 @@ end
 ### Return value
 Two integer values:
 - First Value = 0 on success, non 0 value in case of failure  
-- Second Value = 0 On success, [error code](/vlc-lua-docs/m/errno) in case of failure
+- Second Value = 0 On success, [error code](../errno) in case of failure
 
 ----
 ## `readdir()`
@@ -76,11 +76,11 @@ Similar to [os.remove](https://www.lua.org/manual/5.1/manual.html#pdf-os.remove)
 ### Return value
 Two integer values:
 - First Value = 0 on success, non 0 value in case of failure  
-- Second Value = 0 On success, [error code](/vlc-lua-docs/m/errno) in case of failure
+- Second Value = 0 On success, [error code](../errno) in case of failure
 
 ----
 # File Modes
-A file can be opened with one of mode. These modes are specified by strings where each mode and modifier is represented by a character.
+To open a file, a 'mode' must be specified. This is done via strings where the modes and modifiers are each represented by a character.
 
 Base Modes:
 - 'r' Read Only
@@ -93,16 +93,16 @@ Modifiers can also be added to modes to change the way they work
 - 't' Text Mode; only text will be read from the file (overrides 'b')
 - 'b' Binary mode (overrides 't')
 
-As an example, `f = open("hello.exe", 'rt')` would open, but `f:read("*a")` would not return all data from the file (assuming hello.exe was a binary executable).
+As an example, `f = open("hello.exe", 'rt')` would open, but `f:read("*a")` would not return all data from the file.
 
 ----
 # File Object
-Represents an open file, provides the following methods:
+Represents an open file.
 
 
 ## `file:read()`
 Read from open file.  
-Throws error if called on closed file.
+Throws an error if called on closed file.
 
 ### Usage
 ```lua
@@ -118,7 +118,7 @@ vlc.msg.info("There are " .. string.len(text) .. " characters in the file!")
 		- A read mode string; one of:
 			- "*l" Read a line from the current position in the file
 			- "*n" Read a number from the file
-			- "*a" Read all data from the file (limited by the value of VLC's internal `SIZE_MAX` constant)
+			- "*a" Read all data from the file (limited by the value of C++ `SIZE_MAX` constant)
 	
 	Default value is "*l"
 
@@ -128,7 +128,7 @@ Either `nil` or a string containing the data that was read
 ----
 ## `file:write()`
 Write data to a file.  
-Throws error if called on closed file or a file opened without write permissions.
+Throws an error if called on closed file or a file opened without write permissions.
 
 ### Usage
 ```lua
@@ -142,12 +142,12 @@ f:write("Hello, world!") -- append "Hello, world!"
 	- `...` Additional arguments specifying more data to write
 
 ### Return value
-Boolean value; `true` if write operation succeeded, else `false`
+Boolean value: `true` if write operation succeeded, else `false`
 
 ----
 ## `file:seek()`
 Set the internal position of the file, where file data is read from and written to.  
-Throws error if called on closed file.
+Throws an error if called on closed file.
 
 ### Usage
 ```lua
@@ -161,14 +161,14 @@ vlc.msg.info("42nd character is: " .. f:read(1))
 	- "set" Offset will reference the beginning of the file
 	- "end" Seek to end of file
 - Optional
-	- `offset` Number of bytes to seek to (used in "set" mode), defaults to 0
+	- `offset` Number of bytes to seek to (used in "set" mode); defaults to 0
 
 ### Return value
 Number specifying the new internal position
 
 ----
 ## `file:flush()`
-Flushes output buffer; calls [fflush](https://www.cplusplus.com/reference/cstdio/fflush/) internally.
+Flushes output buffer (calls [fflush](https://www.cplusplus.com/reference/cstdio/fflush/) internally).
 
 ----
 ## `file:close()`

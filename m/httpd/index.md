@@ -3,7 +3,7 @@ title: HTTPd Module
 project: vlc-lua-docs
 ---
 
-An [HTTP daemon](https://www.webopedia.com/TERM/H/HTTPD.html) for use in Lua interfaces. Connects to VLC's internal [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) server API.
+An [HTTP daemon](https://www.webopedia.com/TERM/H/HTTPD.html) for use in Lua interfaces; connects to VLC's internal [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) server API.
 
 ----
 ## `httpd()`
@@ -28,7 +28,7 @@ Adds a handler for a given url. Can serve responses for GET, POST and HEAD reque
 ### Usage
 ```lua
 -- Run with --http-host 127.0.0.1 --http-port 4441 (for example)
--- The folowing handler will serve requests at http://127.0.0.1/test
+-- The following handler will serve requests at http://127.0.0.1/test
 local hd = vlc.httpd()
 local handler = hd:handler("/test", nil, "password", handler_callback, nil)
 ```
@@ -50,16 +50,16 @@ Serve a file at a given url, with a given type. Allows for a broader content typ
 ### Usage
 ```lua
 -- Run with --http-host 127.0.0.1 --http-port 4441 (for example)
--- The folowing handler will serve HTML data at http://127.0.0.1/test
+-- The following handler will serve HTML data at http://127.0.0.1/test
 local hd = vlc.httpd()
 hd:file("/test", "text/html", nil, "password", file_callback, nil)
 ```
 
 ### Parameters
-- `url` String containing the [URL](https://en.wikipedia.org/wiki/URL) to be served on request
-- `mime` String contianing the [MIME type](https://en.wikipedia.org/wiki/Media_type) of the file
-- `user` String containing a username to be used to authenticate connecting clients (Must be `nil` or string)
-- `password` String containing a password to be used to authenticate connecting clients (Must be `nil` or string)
+- `url` [URL](https://en.wikipedia.org/wiki/URL) to be served on request
+- `mime` The [MIME type](https://en.wikipedia.org/wiki/Media_type) of the file
+- `user` A username to be used to authenticate connecting clients (Must be `nil` or string)
+- `password` A password to be used to authenticate connecting clients (Must be `nil` or string)
 - `callback` Reference to a [file callback](#file-callback) function; this will be called to handle connections
 - `data` Data to be sent to the callback (can be `nil`)
 
@@ -79,8 +79,8 @@ hd:redirect("/hello", "/")
 ```
 
 ### Parameters
-- `url_dst` String contianing the destination URL
-- `url_src` String contianing the (source) URL to redirect
+- `url_dst` String containing the destination URL
+- `url_src` String containing the (source) URL to redirect
 
 ### Return value
 [Userdata](https://stackoverflow.com/a/4332717) for the newly created redirect
@@ -116,11 +116,11 @@ end
 ```
 
 ### Parameters
-- `data` Data pased from the constructor
+- `data` Data passed from the constructor
 - `url` URL that was requested (e.g. "/" when requesting the root page)
 - `query` [Query string](https://en.wikipedia.org/wiki/Query_string) (If sent, otherwise nil)
 - `type` Type of HTTP request; values are usually: 2=GET, 3=HEAD, 4=POST
-- `in` Input recieved (POST data), otheriwse empty string ("")
+- `in` Input received (POST data), otherwise empty string ("")
 - `addr` Remote client IP address
 - `host` `nil`
 <!-- 
@@ -134,7 +134,7 @@ A string containing the reply to be issued to the remote client
 
 ----
 ## File Callback
-Callback for the [HTTPd file](#httpfile) method.
+Callback for the [HTTPd file](#httpdfile) method.
 
 ### Example
 ```lua
@@ -161,7 +161,7 @@ end
 ```
 
 ### Parameters
-- `data` Data pased from the constructor
+- `data` Data passed from the constructor
 - `query` [Query string](https://en.wikipedia.org/wiki/Query_string) (If sent, otherwise nil)
 
 ### Return value

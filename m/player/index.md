@@ -40,7 +40,7 @@ Boolean value: `true` if metadata has been preparsed, `false` otherwise
 
 ----
 ## `item:metas()`
-Get VLC-specific mata data of current item as table. Table keys are only included if values exist.  
+Get VLC-specific metadata of current item as table. Table keys are only included if values exist.  
 Table keys are: 
 - `title` 
 - `artist` 
@@ -172,7 +172,7 @@ local p_item = vlc.player.item()
 ```
 
 ### Return value
-Table contianing item information; keys point to other tables.
+Table containing item information; keys point to other tables.
 
 ----
 # Rate and Position
@@ -200,7 +200,7 @@ vlc.player.set_rate(0.8) -- slow it down
 ```
 
 ### Parameters
-`rate` Float representing the new playing rate; <1.0=slower, 1.0=Normal speed, >1.0=faster
+- `rate` Float representing the new playing rate; <1.0=slower, 1.0=Normal speed, >1.0=faster.
 
 ----
 ## `increment_rate()`
@@ -222,7 +222,7 @@ vlc.player.decrement_rate()
 
 ----
 ## `get_position()`
-Get the current position
+Get the current position.
 
 ### Usage
 ```lua
@@ -246,7 +246,7 @@ Current player time, in [microseconds](https://en.wikipedia.org/wiki/Microsecond
 
 ----
 ## `seek_by_pos_absolute()`
-Seek (go to a position) by providing an absolute value.
+Seek (set the player position) by providing an absolute value.
 
 ### Usage
 ```lua
@@ -258,7 +258,7 @@ vlc.player.seek_by_pos_absolute(0.9) -- move position near the end
 
 ----
 ## `seek_by_pos_relative()`
-Seek (go to a position) by providing an relative value: New_Pos = Current_Pos + or - Relative_Value.
+Seek (set the player position) by providing a relative value: New_Pos = Current_Pos + or - Relative_Value.
 
 ### Usage
 ```lua
@@ -270,7 +270,7 @@ vlc.player.seek_by_pos_relative(0.5)
 
 ----
 ## `seek_by_time_absolute()`
-Seek (go to a position) by providing an absolute time.
+Seek (set the player position) by providing an absolute time.
 
 ### Usage
 ```lua
@@ -282,7 +282,7 @@ vlc.player.seek_by_time_absolute(1000000) -- seek to one second
 
 ----
 ## `seek_by_time_relative()`
-Seek (go to a position) by providing an relative time value: New_Time = Current_Time + or - Relative_Value.
+Seek (set the player position) by providing a relative time value: New_Time = Current_Time + or - Relative_Value.
 
 ### Usage
 ```lua
@@ -314,9 +314,19 @@ Number >= 0 representing the number of titles for the current media
 ## `title_next()`
 Tells the player to go to the next title.
 
+### Usage
+```lua
+vlc.player.title_next()
+```
+
 ----
 ## `title_prev()`
 Tells the player to go to the previous title.
+
+### Usage
+```lua
+vlc.player.title_prev() -- go back to the previous title
+```
 
 ----
 ## `title_goto()`
@@ -343,9 +353,19 @@ Number >= 0 representing the number of chapters for the current media
 ## `chapter_next()`
 Tells the player to go to the next chapter.
 
+### Usage
+```lua
+vlc.player.chapter_next()
+```
+
 ----
 ## `chapter_prev()`
 Tells the player to go to the previous chapter.
+
+### Usage
+```lua
+vlc.player.chapter_prev() -- go back to the previous chapter
+```
 
 ----
 ## `chapter_goto()`
@@ -407,7 +427,7 @@ Set audio delay for current media.
 # Subtitles and SPU
 
 ## `add_subtitle()`
-Attatch subtitle track to current media; load from file.
+Attatch a subtitle track to current media; load subtitles from file.
 
 ### Usage
 ```lua
@@ -415,18 +435,18 @@ vlc.player.add_subtitle("file://some/path/to/subtitle_file.srt", true) -- force 
 ```
 
 ### Parameters
-- `path` String contianing the path to the subtitle file or it's parent directory
+- `path` String containing the path to the subtitle file or its parent directory
 - Optional
-	- `autoselect` Boolean; if `true`, subtitle is tried by force, bypassing normal checks; value is `false` by default
+	- `autoselect` Boolean; if `true` subtitle is tried by force, bypassing normal checks; value is `false` by default
 
 ----
 ## `add_subtitle_mrl()`
-Attatch subtitle track to current media; load from [MRL](https://wiki.videolan.org/Media_resource_locator).
+Attatch subtitle track to current media; load subtitles from [MRL](https://wiki.videolan.org/Media_resource_locator).
 
 ### Parameters
-- `path` String contianing the MRL to the subtitle file or it's parent directory
+- `path` String containing the MRL to the subtitle file or its parent directory
 - Optional
-	- `autoselect` Boolean; if `true`, subtitle is tried by force, bypassing normal checks; value is `false` by default
+	- `autoselect` Boolean; if `true` subtitle is tried by force, bypassing normal checks; value is `false` by default
 
 ----
 ## `get_subtitle_delay()`
@@ -465,7 +485,7 @@ Determine whether input exists.
 ### Usage
 ```lua
 if not (vlc.player.is_playing()) then
-	print("Oh no: No media is playing!")
+	print("Uh-oh: No media is playing!")
 	return nil
 end
 local p_item = vlc.player.item()

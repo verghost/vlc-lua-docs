@@ -87,7 +87,7 @@ A [node object](#service-discovery-nodes)
 
 ----
 ## `node:add_subitem()`
-Add an child item to a node.
+Add a child item to a node.
 
 ### Parameters
 - `info` Table with the following keys:

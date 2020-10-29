@@ -2,7 +2,7 @@
 title: OSD Module
 project: vlc-lua-docs
 ---
-Utilities to control On-Screen-Display (OSD).
+Utilities to control On-Screen Display (OSD).
 
 
 # OSD Elements
@@ -12,7 +12,11 @@ Utilities to control On-Screen-Display (OSD).
 Display an icon on a given OSD channel.
 
 ### Parameters
-- `type` String value indicating icon type: one of "pause", "play", "speaker" or "mute"
+- `type` Icon type: one of
+	- `"pause"`
+	- `"play"`
+	- `"speaker"`
+	- `"mute"`
 - Optional
 	- `id` OSD channel ID; uses default channel if one is not provided
 
@@ -24,8 +28,17 @@ Display the text message on a given OSD channel.
 - `msg` String containing the message to display
 - Optional
 	- `id` OSD channel ID; uses default channel if one is not provided
-	- `position` String indicating the position of message on the screen: one of "center", "left", "right", "top", "bottom", "top-left", "top-right", "bottom-left" or "bottom-right" (default is "top-right")
-	- `duration` Integer indicating the amount of time, in [microseconds](https://en.wikipedia.org/wiki/Microsecond), the message should be displayed (default is 1000000μs = 1 second)
+	- `position` String indicating the position of message on the screen: one of 
+		- `"center"` 
+		- `"left"`
+		- `"right"`
+		- `"top"`
+		- `"bottom"`
+		- `"top-left"`
+		- `"top-right"` (default)
+		- `"bottom-left"`
+		- `"bottom-right"`
+	- `duration` Integer indicating the amount of time, in [microseconds](https://en.wikipedia.org/wiki/Microsecond), for which the message should be displayed (default is 1000000μs = 1 second)
 
 ----
 ## `slider()`
@@ -33,13 +46,13 @@ Display slider on a given OSD channel.
 
 ### Parameters
 - `position` Integer from 0 to 100
-- `type` String value: can be either "horizontal" or "vertical" (refers to indicate slider orientaiton)
+- `type` Either `"horizontal"` or `"vertical"` to indicate slider orientaiton
 - Optional
 	- `id` OSD channel ID; uses default channel if one is not provided
 
 ----
 # OSD Channels
-Elements are dsiplayed on individual OSD "channels" (a type of Subpicture channel), which can be created or cleared via the OSD module.
+Elements are dsiplayed on individual OSD channels (a type of Subpicture channel), which can be created or cleared.
 
 
 ## `channel_register()`

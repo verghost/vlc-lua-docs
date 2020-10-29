@@ -10,7 +10,7 @@ Object that provides access to VLM methods.
 NOTE: If the VLM object is deleted and one last reference remains to it in the script, all VLM items will be deleted.
 
 ## `vlm()`
-Instanciate a VLM object.
+Instantiate a VLM object.
 
 ### Return value
 VLM object instance
@@ -39,6 +39,6 @@ Returns a message table with the following fields:
 
 - `"name"` String containing the name of the message/command
 - `"value"` String value of the message (not included in message table
-- `"children"` List of children, where each child is it's own message table
+- `"children"` List of children, where each child is its own message table
 
 NOTE: `"value"` and `"children"` fields are included only if they are available.

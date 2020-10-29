@@ -2,7 +2,7 @@
 title: Miscellaneous Module
 project: vlc-lua-docs
 ---
-Disparate assortment of VLC utilities only available in Interface scripts; organized under a module for convenience.
+Disparate assortment of VLC utilities only available in Interface scripts.
 
 
 ## `version()`
@@ -40,7 +40,7 @@ Number indicating the ID of the given action
 Get the current date.
 
 ### Return value
-Numberc value of the current date in [microseconds](https://en.wikipedia.org/wiki/Microsecond)
+Number representing the current date in [microseconds](https://en.wikipedia.org/wiki/Microsecond)
 
 ----
 ## `mwait()`

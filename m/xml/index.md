@@ -7,7 +7,7 @@ NOTE: The simplexml module can also be used to parse XML documents.
 
 
 ## `xml()`
-Get a XML object, which provides XML reader.
+Get an XML object, which provides XML reader.
 
 ### Return value
 XML Object
@@ -18,10 +18,10 @@ Provided by the XML Object, used to read and parse XML data.
 
 
 ## `xml:create_reader()`
-Create XML reader for a given stream.
+Create an XML reader for a given stream.
 
 ### Parameters
-- `stream` [Stream object](/vlc-lua-docs/m/stream/#streamobject)
+- `stream` [Stream object](../stream/#stream-object)
 
 ### Return value
 XML Reader object
@@ -37,10 +37,10 @@ Returns two values:
 
 ----
 ## `reader:next_attr()`
-Get information about the next attribute in a XML document.
+Get information about the next attribute in an XML document.
 
 ### Return value
-Returns two values on successm `nil` otherwise:
+Returns two values on success `nil` otherwise:
 - `name` String containing the name of the attribute
 - `value` String containing the value of the attribute
 

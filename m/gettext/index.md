@@ -8,7 +8,7 @@ This modules allows access to the [gettext](https://en.wikipedia.org/wiki/Gettex
 ----
 ## `_()`
 [Localization](https://en.wikipedia.org/wiki/Internationalization_and_localization) function for the module.  
-The name comes from the tendancy for the C function "gettext()" to be aliased to "_" to save space.  
+The name refers to the C function "gettext()", which is usually aliased to "_()" in order to save space.
 
 ### Usage
 ```lua
@@ -26,7 +26,7 @@ A localized string in the user's language
 ----
 ## `N_()`
 Returns a string passed to it.  
-The name seems to refer to the [plural form](https://en.wikipedia.org/wiki/Gettext#Plural_form) of gettext, but `N_` is not called [internally](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs/gettext.c).
+The name (seemingly) refers to the [plural form](https://en.wikipedia.org/wiki/Gettext#Plural_form) of gettext, but `N_()` is not called [internally](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs/gettext.c#L46).
 
 ```lua
 -- VLC language is set to: "Français"

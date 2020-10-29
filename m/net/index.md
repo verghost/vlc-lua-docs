@@ -2,7 +2,7 @@
 title: Network Module
 project: vlc-lua-docs
 ---
-Network utilities. Many of the following methods are analogus to utilities in Linux.  
+Network utilities, many of which are analogous to net utilities found in Linux.  
 NOTE: File descriptors are passed to (and returned by) functions as non-negative integer values.
 
 
@@ -11,17 +11,16 @@ Methods to create, manage and listen for TCP connections.
 
 
 ## `listen_tcp()`
-Listen to TCP connections.  
-Creates Net Listen Object.
+Listen to TCP connections; creates [Net Listen Object](#listen-object).
 
 ### Usage
 ```lua
-local l = vlc.net.listen_tcp( "localhost", 1234 )
+local l = vlc.net.listen_tcp("localhost", 1234)
 while true do
 	local fd = l:accept()
 	if fd >= 0 do
-		net.send( fd, "blabla" )
-		net.close( fd )
+		net.send(fd, "blabla")
+		net.close(fd)
 	end
 end
 ```
@@ -46,7 +45,7 @@ File descriptor to accepted connection or `-1` on failure
 
 ----
 ## `send()`
-Send data on open TCP connection
+Send data on an open TCP connection
 
 ### Usage
 ```lua
@@ -64,19 +63,19 @@ end
 	- `length` Length of data from `buffer` to send
 
 ### Return value
-Integer value indicating number of bytes sent on success; `-1` on failure
+Integer value indicating the number of bytes sent on success; `-1` on failure
 
 ----
 ## `recv()`
-Recieve data from connection.
+Receive data from connection.
 
 ### Parameters
 - `fd` File descriptor of open TCP connection
 - Optional
-	- `maxlenght` Integer value specifying maximum number of bytes to read from connection
+	- `maxlength` Integer value specifying maximum number of bytes to read from connection
 
 ### Return value
-String contianing data read from TCP socket or `nil` if error occurred
+String containing the data read from the TCP socket or `nil` if error occurred
 
 ----
 ## `close()`
@@ -91,7 +90,7 @@ Some extra functions, most of which are non-network or deprecated.
 
 ## `poll()`
 Polls file descriptor(s); similar to [poll](https://www.man7.org/linux/man-pages/man2/poll.2.html).  
-Parameter is modified to include `revents` (returned events) which indicate what type of IO is available for the file descriptor.  
+Parameter is modified to include `revents` (returned events) which indicate what type of I/O is available for the file descriptor.  
 All events refer to [poll event flags](#poll-event-flags).
 
 ### Parameters
@@ -105,7 +104,7 @@ Integer value; positive or zero on success, negative on failure
 ----
 ## `read()`
 Read data from a file.  
-Not available on Windows.
+NOTE: Not available on Windows.
 
 ### Parameters
 - `fd` Integer: File descriptor
@@ -118,7 +117,7 @@ String containing the read data or `nil`
 ----
 ## `write()`
 Write data to a file.  
-Not available on Windows.
+NOTE: Not available on Windows.
 
 ### Parameters
 - `fd` File descriptor
@@ -131,7 +130,7 @@ Integer indicating the number of bytes written to `fd` or `-1` if write failed
 
 ----
 ## `url_parse()`
-Alias for [strings.url_parse()](/vlc-lua-docs/m/strings/#url_parse).  
+Alias for [strings.url_parse()](../strings/#url_parse).  
 Deprecated since 3.0.0, kept for backwards compatibility.
 
 ----
@@ -168,8 +167,8 @@ The object returned by [listen_tcp()](#listen_tcp); houses the following methods
 
 
 ## `listen:accept()`
-Accept a TCP connection. Similar to [accept](https://www.man7.org/linux/man-pages/man2/accept.2.html).  
-This is a blocking call, for non-blocking use [`listen:fds()`](#listenfds).
+Accept a TCP connection; similar to [accept](https://www.man7.org/linux/man-pages/man2/accept.2.html).  
+This is a blocking call, for non-blocking use [listen:fds()](#listenfds).
 
 ### Return value
 File descriptor for the accepted socket (non-negative integer)
