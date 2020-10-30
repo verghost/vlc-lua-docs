@@ -4,7 +4,13 @@ project: vlc-lua-docs
 ---
 Methods to control and manage the VLC playlist.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| [Extension](../../t/extensions), [Interface](../../t/intf) |
+
+----
 ## `prev()`
 Play previous track.
 

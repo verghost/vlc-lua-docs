@@ -4,7 +4,13 @@ project: vlc-lua-docs
 ---
 VLC module for stream handling.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| All Types |
+
+----
 # Stream Types
 The stream module offers 3 types of streams, each accessed via the global `vlc` object with their own symbols: `vlc.stream`, `vlc.memory_stream` and `vlc.directory_stream`.
 

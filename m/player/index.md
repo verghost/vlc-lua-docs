@@ -5,6 +5,11 @@ project: vlc-lua-docs
 ###### NOTE: Called "input" pre 4.0; access would be via `vlc.input`.
 Used to handle the VLC player interface.
 
+# Availability
+
+| Script Types |
+| ------------ |
+| [Extension](../../t/extensions), [Interface](../../t/intf), [Services Discovery](../../sd) |
 
 ----
 # Player Item

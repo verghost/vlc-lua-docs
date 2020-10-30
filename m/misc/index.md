@@ -4,7 +4,13 @@ project: vlc-lua-docs
 ---
 Disparate assortment of VLC utilities only available in Interface scripts.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| [Interface](../../t/intf) |
+
+----
 ## `version()`
 Get the VLC version string.
 

@@ -4,10 +4,21 @@ project: vlc-lua-docs
 ---
 Useful VLC objects.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| [Art](../../t/art), [Extension](../../t/extensions), [Interface](../../t/intf), [Meta Fetcher](../../fetcher), [Meta Reader](../../reader), [Services Discovery](../../sd) |
+
+----
 ## `player()`
 Get the [player](../player/) object. Not to be confused with the [player item object](../player/#item).
 NOTE: Pre 4.0.0, this was `vlc.object.input()`
+
+### Usage
+```lua
+local player_obj = vlc.object.player()
+```
 
 ### Return value
 A player item object if input exists, otherwise `nil`

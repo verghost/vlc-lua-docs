@@ -4,7 +4,13 @@ project: vlc-lua-docs
 ---
 Utilities for [Service Discovery](/vlc-lua-docs/t/sd) scripts.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| [Services Discovery](../../sd) |
+
+----
 # Service Discovery Items
 Items are the media elements provided by the service.
 

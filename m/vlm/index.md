@@ -4,7 +4,13 @@ project: vlc-lua-docs
 ---
 The Lua [VideoLAN Manager](https://www.videolan.org/developers/vlc/doc/doxygen/html/group__server.html) wrapper.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| [Extension](../../t/extensions), [Interface](../../t/intf) |
+
+----
 # The VLM Object
 Object that provides access to VLM methods.  
 NOTE: If the VLM object is deleted and one last reference remains to it in the script, all VLM items will be deleted.

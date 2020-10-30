@@ -4,7 +4,13 @@ project: vlc-lua-docs
 ---
 Utilities to control On-Screen Display (OSD).
 
+# Availability
 
+| Script Types |
+| ------------ |
+| [Extension](../../t/extensions), [Interface](../../t/intf) |
+
+----
 # OSD Elements
 
 

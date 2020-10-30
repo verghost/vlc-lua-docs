@@ -4,7 +4,13 @@ project: vlc-lua-docs
 ---
 Sources for random data in VLC Lua scripts.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| [Extension](../../t/extensions), [Interface](../../t/intf) |
+
+----
 ## `number()`
 Get a single random number between 0 and 2^31 - 1
 

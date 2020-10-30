@@ -5,7 +5,13 @@ project: vlc-lua-docs
 Microsoft Windows specific utilities.  
 NOTE: Only available in Widnows builds of VLC.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| [Extension](../../t/extensions), [Interface](../../t/intf) |
+
+----
 ## `console_init()`
 Initialize the windows console.
 

@@ -4,7 +4,13 @@ project: vlc-lua-docs
 ---
 Handle VLC media volume.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| [Extension](../../t/extensions), [Interface](../../t/intf) |
+
+----
 ## `get()`
 Get the volume level of the player.
 

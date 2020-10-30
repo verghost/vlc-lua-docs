@@ -5,10 +5,15 @@ project: vlc-lua-docs
 Network utilities, many of which are analogous to net utilities found in Linux.  
 NOTE: File descriptors are passed to (and returned by) functions as non-negative integer values.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| [Extension](../../t/extensions), [Interface](../../t/intf) |
+
+----
 # TCP Connections
 Methods to create, manage and listen for TCP connections.
-
 
 ## `listen_tcp()`
 Listen to TCP connections; creates [Net Listen Object](#listen-object).

@@ -3,6 +3,13 @@ title: ErrNo Module
 project: vlc-lua-docs
 ---
 
+# Availability
+
+| Script Types |
+| ------------ |
+| [Extension](../../t/extensions), [Interface](../../t/intf) |
+
+----
 When calling a vlc method, sometimes error codes can be returned. This module provides access to a list of these potential error numbers/codes.  
 These are only useful for the [IO module](../io) (as far as I know).  
 List of error values provided by this module:

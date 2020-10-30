@@ -4,7 +4,13 @@ project: vlc-lua-docs
 ---
 String utilities.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| All Types |
+
+----
 ## `decode_uri()`
 Decode one or more [URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier).
 

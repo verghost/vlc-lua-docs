@@ -2,8 +2,13 @@
 title: GetText Module
 project: vlc-lua-docs
 ---
-
 This modules allows access to the [gettext](https://en.wikipedia.org/wiki/Gettext) system implementation provided by VLC.  
+
+# Availability
+
+| Script Types |
+| ------------ |
+| [Interface](../../t/intf), [Services Discovery](../../sd) |
 
 ----
 ## `_()`

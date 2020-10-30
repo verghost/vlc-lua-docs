@@ -4,7 +4,13 @@ project: vlc-lua-docs
 ---
 Output text to the messages window (*Tools*->*Messages* or Ctrl+M).
 
+# Availability
 
+| Script Types |
+| ------------ |
+| All Types |
+
+----
 ## `info()`
 Information messages; displayed with `_lua info:_`.  
 Visible at any verbosity.
