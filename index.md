@@ -1,7 +1,6 @@
 ---
 title: VLC Lua Docs
 ---
-The aim of these docs is to (hopefully) help aspiring developers. All info in these docs has been compiled from a number of disparate readme files, [VideoLAN Forum](https://forum.videolan.org/) posts, [the Wiki](https://wiki.videolan.org/), [code from existing VLC addons](https://addons.videolan.org) and of course my own tinkering and staring at the source code.
 
 ### **A Few Thing To Note**
 - The information in these docs is based on VLC 4.0.0, so these docs may differ significantly from earlier versions of the Lua API.
@@ -9,13 +8,12 @@ The aim of these docs is to (hopefully) help aspiring developers. All info in th
 - The version of these docs on verghost.com might not be the most recent version. Changes are made to [this repo](https://github.com/verghost/vlc-lua-docs/) and are pulled as a subtree.
 
 # Script Basics
-There are a few types of lua scripts each with their own page instead of laying everything out here. I will use this page to cover the basics.
 
 ### What are VLC Lua Scripts?
 Scripts are small one-file programs written in [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)). These programs are run by VLC and can access internal VLC data and functionality via the VLC Lua API, which these docs attempt to describe.
 
 ### Installation
-Scripts are placed into their own special folders in the VLC install directory. Below are the default install directories for VLC on different platforms.
+Scripts are placed into their own special folders in the VLC install directory. Below are the install directories for VLC scripts on different platforms.
 - Windows (all users): %ProgramFiles%\VideoLAN\VLC\lua\
 - Windows (current user): %APPDATA%\VLC\lua\
 - Linux (all users): /usr/lib/vlc/lua/
@@ -35,11 +33,11 @@ Scripts are placed into their own special folders in the VLC install directory. 
 | [Playlist Parsers](https://verghost.com/vlc-lua-docs/t/playlist) | Scripts called to handle files when VLC is given a specific URL (e.g. when VLC gets http://somewebsite.com/playlist/id_string") | /lua/playlist/ | 0.9+ |
 | [Services Discovery](https://verghost.com/vlc-lua-docs/t/sd) | Used to generate media from a service (found on the sidebar) | /lua/sd/ | 1.1+ |
 
-### Special Identifiers
-While a custom script is running, VLC will look for a number of different identifiers (names of functions or variables). How they are defined and implemented determines the look and functionality of a script, or whether the script runs at all. Different script types expect different identifiers to be defined, so see the type pages for more detail.
+### Special Functions
+While a custom script is running, VLC will provide (and try to execute) a number of different functions. How they are defined and implemented determines the look and functionality of a script, or whether the script runs at all. Different script types expect different identifiers to be defined, so see the type pages for more detail.
 
 ## Modules
-In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3). Modules are available via the global `vlc` table, depending on the type of script that is running.
+In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3). VLC's Lua Modules are available via the global `vlc` table and are assigned their own symbols (e.g. `vlc.config` => configuration module). Depending on the type of script that is running, certain modules may not be available.
 
 | Name | Symbol(s) | Description | Availability |
 | ---- | --------- | ----------- | ------------ |
@@ -55,7 +53,7 @@ In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1
 | [Network](https://verghost.com/vlc-lua-docs/m/net)  | `net` | Various network methods | Extension, Interface |
 | [Objects](https://verghost.com/vlc-lua-docs/m/objects)  | `object` | Provides access to various objects | Extension, Interface, Meta, Service Discovery |
 | [OSD](https://verghost.com/vlc-lua-docs/m/osd)  | `osd` | On-screen display functionality (ex. Display OSD messages, modify channels) | Extension, Interface |
-| [Player](https://verghost.com/vlc-lua-docs/m/player) | `player` | Access the VLC player interface (Called "input" pre 4.0) | Extension, Interface, Service Discovery |
+| [Player](https://verghost.com/vlc-lua-docs/m/player) | `player` (pre 4.0: `input`) | Access the VLC player interface (Called "input" pre 4.0) | Extension, Interface, Service Discovery |
 | [Playlist](https://verghost.com/vlc-lua-docs/m/playlist)  | `playlist` | Access and modify playlists | Extension, Interface |
 | [Random](https://verghost.com/vlc-lua-docs/m/rand)  | `rand` | Get random numbers/bytes | Extension, Interface |
 | [Renderer Discovery](https://verghost.com/vlc-lua-docs/m/rd)  | `rd` | ? | ? |
@@ -70,7 +68,7 @@ In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1
 | [XML](https://verghost.com/vlc-lua-docs/m/xml)  | `xml` | [XML](https://en.wikipedia.org/wiki/XML) reader, can be replaced by simplexml | All types |
 
 ### Non-VLC Modules
-Outside of the modules in the global `vlc` table, VLC provides some [Lua modules](https://www.lua.org/manual/5.1/manual.html#5.3) to aid in developing more complex scripts. These modules are found in VLC_INSTALL_PATH/lua/modules/ and must be explicitly required in lua code using the built-in [require](https://www.lua.org/pil/8.1.html) function. Furthermore, any custom Lua modules placed in the lua/modules folder may also be required in a Lua script.
+Outside of the modules in the global `vlc` table, VLC provides some other modules to aid in developing more complex scripts. These modules are found in VLC_INSTALL_PATH/lua/modules/ and must be explicitly imported into lua code using the built-in [require](https://www.lua.org/pil/8.1.html) function. Furthermore, any custom Lua modules placed in the lua/modules folder may also be 'required' in a Lua script.
 
 ```lua
 require "module1" -- This works
@@ -78,7 +76,7 @@ local mod2 = require("module2") -- This also works
 ```
 
 ## LUAC
-LUAC is a command line tool that lets you translate Lua scripts (.lua) into binary files (.luac), which are accepted as extensions by VLC (ex. VLC compiles the native VLsub extension for releases).  
+LUAC is a command line tool that lets you translate Lua scripts (.lua) into binary files (.luac), which are accepted as scripts by VLC when placed in an install directory.  
 A more detailed description of LUAC can be found on it's [man page](https://www.lua.org/manual/5.1/luac.html), but here's a quick summary:
 
 #### What LUAC does
