@@ -1,5 +1,6 @@
 ---
 title: VLC Lua Docs
+project: none
 ---
 
 ### **A Few Thing To Note**
