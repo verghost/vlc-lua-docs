@@ -84,6 +84,29 @@ Called when the extension is started via the *View* menu and "trigger" was suppl
 Called when the extension is deactivated via the *View* menu.
 
 ----
+Lua Modules
+The following modules are available in extension scripts:  
+- [Configuration](../../m/config)
+- [Dialog](../../m/dialog)
+- [Errno](../../m/errno)
+- [I/O](../../m/io)
+- [Messages](../../m/msg)
+- [Network](../../m/net)
+- [Objects](../../m/objects)
+- [OSD](../../m/osd)
+- [Player](../../m/player)
+- [Playlist](../../m/playlist)
+- [Random](../../m/rand)
+- [Stream](../../m/stream)
+- [Strings](../../m/strings)
+- [Variables](../../m/var)
+- [Video](../../m/video)
+- [VLM](../../m/vlm)
+- [Volume](../../m/volume)
+- [Windows](../../m/win) (Windows builds only)
+- [XML](../../m/xml)
+
+----
 # Example
 
 Here is an sample extension.
