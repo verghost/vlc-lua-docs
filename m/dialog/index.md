@@ -2,11 +2,6 @@
 title: Dialog Module
 project: vlc-lua-docs
 ---
-
-<!-- 
-TODO: Add list of methods provided by each widget (in rv section?).
--->
-
 This module provides access to VLC's dialog and widget system via the UI Dialog object.
 
 # Availability
@@ -16,6 +11,10 @@ This module provides access to VLC's dialog and widget system via the UI Dialog 
 | [Extension](../../t/extensions) |
 
 ----
+# UI Dialog Object
+This is the table that represents the VLC dialog, of which there can be only one per extension. Functionality can be added via "widgets", which have their own class.
+
+
 ## `dialog()`
 Constructor for the UI Dialog object.
 
@@ -31,9 +30,6 @@ String representing the title of the new dialog
 A table representing the new created dialog
 
 ----
-# UI Dialog Object
-This is the table that represents the VLC dialog, of which there can be only one per extension. Functionality can be added via "widgets", which have their own class.
-
 ## `dialog:show()`
 Show the dialog, create the window.
 
@@ -163,7 +159,8 @@ local button_wgt = dlg:add_button("Click Me", clickme, ...)
   - `...` [Widget](#widget-parameters) parameters
 
 ### Return value
-A widget object corresponding to the new widget
+A widget object corresponding to the new widget  
+This widget provides the following methods: [get_text()](#widgetget_text), [set_text()](#widgetset_text)
 
 ----
 ## `dialog:add_label()`
@@ -181,7 +178,8 @@ local label_wgt = dlg:add_label("My label", ...)
   - `...` [Widget](#widget-parameters) parameters
 
 ### Return value
-A widget object corresponding to the new widget
+A widget object corresponding to the new widget  
+This widget provides the following methods: [get_text()](#widgetget_text), [set_text()](#widgetset_text)
 
 ----
 ## `dialog:add_html()`
@@ -199,7 +197,8 @@ local rich_wgt = dlg:add_html("My rich label with <i>cool</i> HTML!", ...)
   - `...` [Widget](#widget-parameters) parameters
 
 ### Return value
-A widget object corresponding to the new widget
+A widget object corresponding to the new widget  
+This widget provides the following methods: [get_text()](#widgetget_text), [set_text()](#widgetset_text)
 
 ----
 ## `dialog:add_text_input()`
@@ -217,7 +216,8 @@ local input_wgt = dlg:add_text_input("This is a Text Box", ...)
   - `...` [Widget](#widget-parameters) parameters
 
 ### Return value
-A widget object corresponding to the new widget
+A widget object corresponding to the new widget  
+This widget provides the following methods: [get_text()](#widgetget_text), [set_text()](#widgetset_text)
 
 ----
 ## `dialog:add_password()`
@@ -236,7 +236,8 @@ local passwd_wgt = dlg:add_password("password123", ...)
   - `...` [Widget](#widget-parameters) parameters
 
 ### Return value
-A widget object corresponding to the new widget
+A widget object corresponding to the new widget  
+This widget provides the following methods: [get_text()](#widgetget_text), [set_text()](#widgetset_text)
 
 ----
 ## `dialog:add_check_box()`
@@ -255,7 +256,8 @@ local check_wgt = dlg:add_check_box("Yes or No?", false, ...)
   - `...` [Widget](#widget-parameters) parameters
 
 ### Return value
-A widget object corresponding to the new widget
+A widget object corresponding to the new widget  
+This widget provides the following methods: [get_text()](#widgetget_text), [set_text()](#widgetset_text), [get_checked()](#widgetget_checked), [set_checked()](#widgetset_checked)
 
 ----
 ## `dialog:add_dropdown()`
@@ -273,7 +275,8 @@ local drop_wgt = dlg:add_dropdown(...)
   - `...` [Widget](#widget-parameters) parameters
 
 ### Return value
-A widget object corresponding to the new widget
+A widget object corresponding to the new widget  
+This widget provides the following methods: [clear()](#widgetclear), [get_value()](#widgetget_value), [add_value()](#widgetadd_value)
 
 ----
 ## `dialog:add_list()`
@@ -291,7 +294,8 @@ local list_wgt = dlg:add_list(...)
   - `...` [Widget](#widget-parameters) parameters
 
 ### Return value
-A widget object corresponding to the new widget
+A widget object corresponding to the new widget  
+This widget provides the following methods: [get_selection()](#widgetget_selection), [clear()](#widgetclear), [get_value()](#widgetget_value) (4.0+), [add_value()](#widgetadd_value) (4.0+)
 
 ----
 ## `dialog:add_image()`
@@ -329,7 +333,8 @@ local spin_icon_wgt = dlg:add_spin_icon(0, ...)
   - `...` [Widget](#widget-parameters) parameters
 
 ### Return value
-A widget object corresponding to the new widget
+A widget object corresponding to the new widget  
+This widget provides the following methods: [animate()](#widgetanimate), [stop()](#widgetstop)
 
 ----
 # Modifying Widgets
@@ -411,7 +416,7 @@ A string (or nil) representing the text value of the selected item
 ----
 ## `widget:add_value()`
 Add an item to the widget  
-Applies to the follwing types of widget: dropdown and list (4.0+).
+Applies to the follwing types of widget: dropdown and list.
 
 ### Usage
 ```lua
@@ -421,8 +426,9 @@ dropdown_wgt:add_value("four", 4)
 
 ### Parameters
 - `text` String text display value for the item
-- `id` Integer identifier for the new item.
-  - This value defaults to 0 and is optional if id = 0 is not an item (i.e. empty list). If two items share the same id, then widget:get_value will fail on the item)
+- Optional
+	- `id` Integer identifier for the new item (Defaults to 0)
+		- If two items share the same id, then widget:get_value will fail on the item
 
 ----
 ## `widget:clear()`

@@ -35,7 +35,7 @@ vlc.config.set(name, value)
 ```
 
 ### Parameters
-- `name` Name of the vlc config option
+- `name` Name of the vlc config option (set fails if name is invalid)
 - `value` Value to assign to the config option
 
 ----
