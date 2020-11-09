@@ -84,7 +84,7 @@ Called when the extension is started via the *View* menu and "trigger" was suppl
 Called when the extension is deactivated via the *View* menu.
 
 ----
-Lua Modules
+# Lua Modules
 The following modules are available in extension scripts:  
 - [Configuration](../../m/config)
 - [Dialog](../../m/dialog)
