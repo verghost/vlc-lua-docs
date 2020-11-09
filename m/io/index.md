@@ -23,10 +23,10 @@ local f = open("hello.txt", 'rt') -- only read text
 ### Parameters
 - `path` String containing the path to a file
 - Optional
-	- `mode` String specifying which [mode](#filemodes) in which to open the file; defaults to 'r'
+	- `mode` String specifying which [mode](#file-modes) in which to open the file; defaults to 'r'
 
 ### Return value
-A [File Object](#fileobject)
+A [File Object](#file-object)
 
 ----
 ## `mkdir()`
