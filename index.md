@@ -2,6 +2,7 @@
 title: VLC Lua Docs
 project: none
 ---
+This is some documentation on the Lua scripting API for VLC Media Player. It covers the modules and script types that are available to VLC addon developers.
 
 ### **A Few Thing To Note**
 - The information in these docs is based on VLC 4.0.0, so these docs may differ significantly from earlier versions of the Lua API.
@@ -43,27 +44,27 @@ In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1
 | Name | Symbol(s) | Description | Availability |
 | ---- | --------- | ----------- | ------------ |
 | [Configuration](./m/config) | `config` | Access and modify VLC configuration options | Extension, Interface |
-| [Dialog](./m/dialog) | `dialog` | Interface to the DialogUI object | Extension |
+| [Dialog](./m/dialog) | `dialog` | Create and manage a dialog window (UI) | Extension |
 | [Equalizer](./m/equalizer) | `equalizer` | Access and modify equalizer settings and presets | Interface |
 | [Errno](./m/errno) | `errno` | Error values | Extension, Interface |
 | [GetText](./m/gettext) | `gettext` | Alias for libvlc [gettext](https://en.wikipedia.org/wiki/Gettext) | Interface, Service Discovery |
-| [HTTPd](./m/httpd)  | `httpd` | Interface to the VLC HTTP Daemon constructor | Interface |
+| [HTTPd](./m/httpd)  | `httpd` | HTTP Daemon | Interface |
 | [I/O](./m/io)  | `io` | Input/Output (i.e. file read/write, directories, etc...) | Extension, Interface |
 | [Messages](./m/msg)  | `msg` | Output to the Messages console (Tools->Messages) | All types |
 | [Miscellaneous](./m/misc)  | `misc` | Uncategroized functionality | Interface |
-| [Network](./m/net)  | `net` | Various network methods | Extension, Interface |
+| [Network](./m/net)  | `net` | Some network methods | Extension, Interface |
 | [Objects](./m/objects)  | `object` | Provides access to various objects | Extension, Interface, Meta, Service Discovery |
 | [OSD](./m/osd)  | `osd` | On-screen display functionality (ex. Display OSD messages, modify channels) | Extension, Interface |
-| [Player](./m/player) | `player` (pre 4.0: `input`) | Access the VLC player interface (Called "input" pre 4.0) | Extension, Interface, Service Discovery |
+| [Player](./m/player) | `player` (pre 4.0: `input`) | Access the VLC player (Called "input" pre 4.0) | Extension, Interface, Service Discovery |
 | [Playlist](./m/playlist)  | `playlist` | Access and modify playlists | Extension, Interface |
 | [Random](./m/rand)  | `rand` | Get random numbers/bytes | Extension, Interface |
 | [Renderer Discovery](./m/rd)  | `rd` | ? | ? |
-| [Services Discovery](./m/sd)  | `sd` | Functions for service discovery scripts (i.e. add nodes, items) | Service Discovery |
+| [Services Discovery](./m/sd)  | `sd` | Functionality for service discovery scripts (i.e. add nodes, items) | Service Discovery |
 | [Stream](./m/stream)  | `stream`, `memory_stream`, `directory_stream` | Access to data streams and methods to read/modify them | All Types |
 | [Strings](./m/strings)  | `strings` | String utils (ex. parse URI/URL, handle special chars) | All Types |
-| [Variables](./m/var)  | `var` | Interface to VLC internal variables(?) | All Types |
-| [Video](./m/video)  | `video` | Change video interface | Extension, Interface |
-| [VLM](./m/vlm)  | `vlm` | VideoLAN Manager object instance method | Extension, Interface |
+| [Variables](./m/var)  | `var` | Create and manipulate variables in VLC objects | All Types |
+| [Video](./m/video)  | `video` | VLC video interface | Extension, Interface |
+| [VLM](./m/vlm)  | `vlm` | VideoLAN Manager | Extension, Interface |
 | [Volume](./m/volume)  | `volume` | Modify volume | Extension, Interface |
 | [Windows](./m/win)  | `win` | Access to Windows console | Extension, Interface (Windows builds only) |
 | [XML](./m/xml)  | `xml` | [XML](https://en.wikipedia.org/wiki/XML) reader, can be replaced by simplexml | All types |
