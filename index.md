@@ -4,15 +4,7 @@ project: none
 ---
 This is some documentation on the Lua scripting API for VLC Media Player. It covers the modules and script types that are available to VLC addon developers.
 
-### **A Few Thing To Note**
-- The information in these docs is based on VLC 4.0.0, so these docs may differ significantly from earlier versions of the Lua API.
-- This is NOT a Lua tutorial. There are plenty of [good ones](http://lua-users.org/wiki/TutorialDirectory) out there, though.
-- The version of these docs on verghost.com might not be the most recent version. Changes are made to [this repo](https://github.com/verghost/vlc-lua-docs/) and are pulled as a subtree.
-
 # Script Basics
-
-### What are VLC Lua Scripts?
-Scripts are small one-file programs written in [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)). These programs are run by VLC and can access internal VLC data and functionality via the VLC Lua API, which these docs attempt to describe.
 
 ### Installation
 Scripts are placed into their own special folders in the VLC install directory. Below are the install directories for VLC scripts on different platforms.
@@ -34,9 +26,6 @@ Scripts are placed into their own special folders in the VLC install directory. 
 | [Meta Reader](./t/reader) | ? | /lua/meta/reader/ | 1.1+ |
 | [Playlist Parsers](./t/playlist) | Scripts called to handle files when VLC is given a specific URL (e.g. when VLC gets http://somewebsite.com/playlist/id_string") | /lua/playlist/ | 0.9+ |
 | [Services Discovery](./t/sd) | Used to generate media from a service (found on the sidebar) | /lua/sd/ | 1.1+ |
-
-### Special Functions
-While a custom script is running, VLC will provide (and try to execute) a number of different functions. How they are defined and implemented determines the look and functionality of a script, or whether the script runs at all. Different script types expect different identifiers to be defined, so see the type pages for more detail.
 
 ## Modules
 In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3). VLC's Lua Modules are available via the global `vlc` table and are assigned their own symbols (e.g. `vlc.config` => configuration module). Depending on the type of script that is running, certain modules may not be available.
