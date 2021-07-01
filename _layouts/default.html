@@ -237,7 +237,7 @@
 				
 				/* second heading */
 				let tagline = dq(".project-tagline");
-				let pdirs = window.location.pathname.replace(/(^\/)|(\/$)/g, '').split("/");
+				let pdirs = window.location.pathname.replace(/(^\/)|(\/$)/g, '').split("/").slice(0, -1);
 				let last = { text: "{{ page.title | default: "" }}", link: window.location.href };
 				if(pdirs.join("") != "" && pdirs.length > 0 && last.text !== "") {
 					let lval = window.location.origin;
@@ -249,7 +249,7 @@
 						addAtag(tagline, lval, vghhelper[e].text || e);
 						tagline.insertAdjacentText('beforeend', " / ");
 					});
-					//addAtag(tagline, window.location.href, last.text);
+					addAtag(tagline, window.location.href, last.text);
 				}
 				
 				/* style bodge */
