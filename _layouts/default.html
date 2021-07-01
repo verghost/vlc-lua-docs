@@ -241,6 +241,8 @@
 				let last = { text: "{{ page.title | default: "" }}", link: window.location.href };
 				if(pdirs.length > 0 && last.text !== "") {
 					let lval = window.location.origin;
+					addAtag(tagline, lval, "Home");
+					tagline.insertAdjacentText('beforeend', " / ");
 					pdirs.forEach(e => {
 						if(!vghhelper[e]) return;
 						lval += "/" + e;
