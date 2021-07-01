@@ -2,7 +2,7 @@
 title: Extension Scripts
 project: vlc-lua-docs
 ---
-Extension scripts are smaller applications that "extend" VLC functionality. To this end, the extension scripts are the only kind that have access to the [dialog lua module](/vlc-lua-docs/m/dialog), which allows developers to create a new dialog window.
+Extension scripts are smaller applications that "extend" VLC functionality. To this end, the extension scripts are the only kind that have access to the [dialog lua module](/m/dialog), which allows developers to create a new dialog window.
 
 Extension scripts are not activated by default on startup, this must be done via the *View* menu.
 
