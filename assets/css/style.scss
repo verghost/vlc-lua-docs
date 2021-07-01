@@ -1,0 +1,27 @@
+---
+---
+
+@import 'jekyll-theme-cayman';
+
+/* Github rouge Code Style Bodge */
+code.language-plaintext { color: #24292e; }
+.highlight .p { color: #24292e; }
+.highlight .n { color: #24292e; }
+.highlight .o { color: #d73a49; }
+.highlight .kd { color: #d73a49; }
+.highlight .pl-c1 { color: #005cc5; }
+.main-content h2 > code {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Other style bodges */
+.main-content {
+	max-width: 90rem;
+}
+.project-tagline a {
+	color: #7cd8f4;
+}
+.main-content hr {
+	margin: 2rem 0 1rem 0;
+}

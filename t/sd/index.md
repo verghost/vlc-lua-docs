@@ -3,7 +3,7 @@ title: Services Discovery Scripts
 project: vlc-lua-docs
 ---
 Services discovery scripts (SDs) are scripts that, as the name might suggest, discover media files from online services. Defining an SD will cause it to appear as an option in the side panel of VLC under the subheading "Internet".  
-Once the media has been discovered and handled, they can be presented to the user can add media items to the SD panel, which can then be played by the user.  
+Once the media has been discovered and handled, they can be presented to the user can add media items to the SD panel, which can then be played by the user. 
 Managing these items is done with the [SD Lua module](../../m/sd/).
 
 ----
@@ -35,7 +35,7 @@ Only called when the "search" capability is returned from descriptor().
 
 ----
 # Lazy Initialization
-Due to the way that SDs are implemented, you cannot make a global/top-level require for a VLC Lua module (including those in the lua/modules directory.  
+Due to the way that SDs are implemented, you cannot make a global/top-level require for a VLC Lua module (including those in the lua/modules directory. 
 Instead, it is recommended that SD developers "lazily load" them from the main() and/or search() functions.
 ```lua
 lazily_loaded = false

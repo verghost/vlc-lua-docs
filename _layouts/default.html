@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="{{ site.lang | default: 'en-US' }}">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#157878">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>{{ page.title | default: site.title | default: site.github.repository_name }}</title>
+		<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+		<style>
+			.vgsidebar {
+				width: 280px;
+				background-color: #fff;
+				border-right: 1px solid #dfe2e5;
+			}
+			.panel {
+				margin: 0;
+				padding: 0;
+				height: auto;
+				position: fixed;
+				box-sizing: border-box;
+				left: 0 !important;
+				right: 0 !important;
+				top: 65px !important;
+				bottom: 45px !important;
+				overflow-x: visible;
+				overflow-y: auto;
+				z-index: 1000000000;
+				transition: transform .3s ease-in;
+				box-sizing: border-box;
+			}
+			.panel a {
+				word-wrap: break-word;
+				display: block;
+				color: #606c71;
+				text-decoration: none;
+				text-align: left;
+			}
+			.panel a.active {
+				background-color: #4CAF50;
+				color: white;
+			}
+			.panel a:hover:not(.active) {
+				background-color: #555;
+				color: white;
+			}
+			#sidebar-toggle {
+				position: fixed;
+				top: 0 !important;
+				margin-right: 0px !important;
+				transition: transform .3s ease-out;
+			}
+			.header-icon {
+				z-index: 1000000001;
+				background-color: #fff;
+				border-color: gray;
+				width: 55px;
+				height: 55px;
+				display: inline-flex;
+			}
+			.panel-icon {
+				padding: 0 !important;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.panel-icon svg {
+				width: 16px;
+				height: auto;
+				fill:#000;
+			}
+			#sidebar-header {
+				display: flex;
+				flex-direction: row;
+				height: 65px;
+				padding-left: 70px;
+				position: fixed;
+				z-index: 1000000000;
+				top: 0px !important;
+				transition: transform .3s ease-in;
+			}
+			#sidebar-footer {
+				height: 45px;
+				position: fixed;
+				z-index: 1000000000;
+				bottom: 0 !important;
+				transition: transform .3s ease-in;
+			}
+			.squarei {
+				padding-right: 20px;
+				padding-left: 20px;
+				padding-bottom: 15px;
+				padding-top: 15px;
+				text-align: center;
+				text-decoration: none;
+				/* display: inline; */
+				font-size: 14px;
+				transition: 0.3s;
+				cursor: pointer;
+				margin: 5px;
+			}
+			.squarei:hover {
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
+			.squarei:active {
+				box-shadow: 0 5px light-grey;
+				transform: translateY(2px);
+				transition: 0.01s;
+			}
+			.squarei.small {
+				font-size: 12px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				margin-top: 0px;
+				margin-left: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="page-header" role="banner" style="padding-top: 20px; padding-bottom: 10px;">
+			  <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+			  <h2 class="project-tagline">{{ page.debug | "" }}</h2>
+		</header>
+		
+		<button id="sidebar-toggle" class="squarei header-icon" onclick="sidebar_toggle()">☰</button>
+		
+		<div id="sidebar-header" class="vgsidebar" style="transform: translateX(-100%)">
+			<button id="back-icon" class="squarei header-icon panel-icon" title="Back" disabled="true" onclick="doPanelAction('back')"><img class="img-panel-icon" src="https://img.icons8.com/windows/24/000000/back.png"/></button>
+			<button id="search-icon" class="squarei header-icon panel-icon" title="Search" onclick="doPanelAction('search')"><svg class="svg-panel-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 16 16"><path class="path-panel-icon" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></button>
+			<button id="home-icon" class="squarei header-icon panel-icon" title="Home" onclick="doPanelAction('home')"><svg class="svg-panel-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50"><path class="path-panel-icon" d="M 24.962891 1.0546875 A 1.0001 1.0001 0 0 0 24.384766 1.2636719 L 1.3847656 19.210938 A 1.0005659 1.0005659 0 0 0 2.6152344 20.789062 L 4 19.708984 L 4 46 A 1.0001 1.0001 0 0 0 5 47 L 18.832031 47 A 1.0001 1.0001 0 0 0 19.158203 47 L 30.832031 47 A 1.0001 1.0001 0 0 0 31.158203 47 L 45 47 A 1.0001 1.0001 0 0 0 46 46 L 46 19.708984 L 47.384766 20.789062 A 1.0005657 1.0005657 0 1 0 48.615234 19.210938 L 41 13.269531 L 41 6 L 35 6 L 35 8.5859375 L 25.615234 1.2636719 A 1.0001 1.0001 0 0 0 24.962891 1.0546875 z M 25 3.3222656 L 44 18.148438 L 44 45 L 32 45 L 32 26 L 18 26 L 18 45 L 6 45 L 6 18.148438 L 25 3.3222656 z M 37 8 L 39 8 L 39 11.708984 L 37 10.146484 L 37 8 z M 20 28 L 30 28 L 30 45 L 20 45 L 20 28 z"></path></svg></button>
+		</div>
+		
+		<div id="sidebar-panel" class="vgsidebar panel" style="transform: translateX(-100%)">
+			<a id="default-top-link" class="squarei" href="#content">{{ page.title | default: "" }}</a>
+		</div>
+		
+		<div id="sidebar-footer" class="vgsidebar" style="transform: translateX(-100%)"></div>
+		
+		<main id="content" class="main-content" role="main">
+			{{ content }}
+
+			<footer class="site-footer">
+{% if site.github.is_project_page %}
+				<span class="site-footer-owner">Maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
+{% endif %}
+				<span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+			</footer>
+		</main>
+		
+		<!-- Scripts -->
+		<script src="/js/vglib.js"></script>
+{% case page.project %}
+{% when "vlc-lua-docs" %}
+		<!-- VLC Lua Docs -->
+		<script>
+			var vghhelper = {
+				"vlc-lua-docs": { text: "Docs" },
+				"m": { text: "Modules" },
+				"t": { text: "Script Types" }
+			};
+		</script>
+{% else %}
+		<!-- NO_TYPE -->
+		<script> var vghhelper = {}; </script>
+{% endcase %}
+		<script>
+			var sidebar_hasinit = false;
+			var sidebar_open = false;
+			var sidebar_panel;
+			
+			function sidebar_toggle() {
+				if(sidebar_open) {
+					document.querySelector("#sidebar-panel").style.transform = 'translateX(-100%)';
+					document.querySelector("#sidebar-header").style.transform = 'translateX(-100%)';
+					document.querySelector("#sidebar-footer").style.transform = 'translateX(-100%)';
+					document.querySelector("#sidebar-toggle").style.transform = 'none';
+					sidebar_open = false;
+				} else {
+					document.querySelector("#sidebar-panel").style.transform = 'none';
+					document.querySelector("#sidebar-header").style.transform = 'none';
+					document.querySelector("#sidebar-footer").style.transform = 'none';
+					document.querySelector("#sidebar-toggle").style.transform = 'rotateZ(90deg)';
+					sidebar_open = true;
+				}
+			}
+			
+			function doPanelAction(action) {
+				switch(action) {
+					case 'back':
+						window.location.href = window.location.origin + window.location.pathname + "../";
+						break;
+					case 'search':
+						window.location.href = "https://github.com/verghost/verghost/";
+						break;
+					case 'home':
+						window.location.href = window.location.origin;
+						break;
+					default:
+						break;
+				}
+			}
+			
+			function addAtag(elem, link, text, className="") {
+				let atag = document.createElement("a");
+				atag.className = className;
+				atag.href = link;
+				atag.innerText = text;
+				elem.appendChild(atag);
+			}
+			
+			function add_sidebar(text, link, className="squarei") {
+				if(!sidebar_panel) sidebar_panel = dq("#sidebar-panel");
+				addAtag(sidebar_panel, link, text, className);
+			}
+			
+			document.addEventListener('click', (e) => {
+				let s = e.srcElement;
+				const cn = `${s.className}`;
+				if(cn.includes("-icon")) return;
+				if(sidebar_open) {
+					if(!cn.includes("sidebar") && s.tagName !== "A") sidebar_toggle();
+				}
+			});
+			
+			window.addEventListener('load', () => {
+				/* sidebar */
+				if (window.location.pathname.lastIndexOf("/") !== 0) { dq("#back-icon").disabled = false; }
+				
+				let ht = dqa("#content h1, #content h2");
+				if(ht.length > 0) {
+					if(ht[0].tagName === 'H1') dq("#default-top-link").remove(); // remove default top content link
+					for(let i = 0; i < ht.length; i++) {
+						add_sidebar(ht[i].innerText, `#${ht[i].id}`, (ht[i].tagName === "H1")? "squarei" : "squarei small");
+					}
+				}
+				sidebar_hasinit = true;
+				
+				/* second heading */
+				let tagline = dq(".project-tagline");
+				let pdirs = window.location.pathname.replace(/(^\/)|(\/$)/g, '').split("/").slice(0, -1);
+				let last = { text: "{{ page.title | default: "" }}", link: window.location.href };
+				if(pdirs.length > 0 && last.text !== "") {
+					let lval = window.location.origin;
+					pdirs.forEach(e => {
+						if(!vghhelper[e]) return;
+						lval += "/" + e;
+						addAtag(tagline, lval, vghhelper[e].text || e);
+						tagline.insertAdjacentText('beforeend', " / ");
+					});
+					addAtag(tagline, window.location.href, last.text);
+				}
+				
+				/* style bodge */
+				let p_class = dqa(".language-lua code > span.p");
+				if(p_class) {
+					for(let i = 0; i < p_class.length; i++) {
+						let el = p_class[i];
+						if(el.innerText === "(" && el.previousElementSibling && el.previousElementSibling.className === "n") {
+							el.previousElementSibling.className = "pl-c1";
+						}
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
