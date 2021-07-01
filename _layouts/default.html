@@ -155,7 +155,6 @@
 		<!-- VLC Lua Docs -->
 		<script>
 			var vghhelper = {
-				"vlc-lua-docs": { text: "Docs" },
 				"m": { text: "Modules" },
 				"t": { text: "Script Types" }
 			};
@@ -238,7 +237,7 @@
 				
 				/* second heading */
 				let tagline = dq(".project-tagline");
-				let pdirs = window.location.pathname.replace(/(^\/)|(\/$)/g, '').split("/");//.slice(0, -1);
+				let pdirs = window.location.pathname.replace(/(^\/)|(\/$)/g, '').split("/").slice(0, -1);
 				let last = { text: "{{ page.title | default: "" }}", link: window.location.href };
 				if(pdirs.length > 0 && last.text !== "") {
 					let lval = window.location.origin;
