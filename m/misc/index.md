@@ -8,7 +8,7 @@ Disparate assortment of VLC utilities only available in Interface scripts.
 
 | Script Types |
 | ------------ |
-| [Interface](../../t/intf) |
+| [Interface](/t/intf) |
 
 ----
 ## `version()`
