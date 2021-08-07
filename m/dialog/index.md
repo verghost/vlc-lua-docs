@@ -117,7 +117,7 @@ Widgets are small components that provide most of utility and U.I. of the dialog
 | HTML | [add_html()](#dialogadd_html) | [get_text()](#widgetget_text), [set_text()](#widgetset_text) |
 | Text Input | [add_text_input()](#dialogadd_text_input) | [get_text()](#widgetget_text), [set_text()](#widgetset_text) |
 | Password | [add_password()](#dialogadd_password) | [get_text()](#widgetget_text), [set_text()](#widgetset_text) |
-| Check Box | [add_check_box()](dialogadd_check_box) | [get_text()](#widgetget_text), [set_text()](#widgetset_text), [get_checked()](#widgetget_checked), [set_checked()](#widgetset_checked) |
+| Check Box | [add_check_box()](#dialogadd_check_box) | [get_text()](#widgetget_text), [set_text()](#widgetset_text), [get_checked()](#widgetget_checked), [set_checked()](#widgetset_checked) |
 | Dropdown | [add_dropdown()](#dialogadd_dropdown) | [clear()](#widgetclear), [get_value()](#widgetget_value), [add_value()](#widgetadd_value) |
 | List | [add_list()](dialogadd_list) | [get_selection()](#widgetget_selection), [clear()](#widgetclear), [get_value()](#widgetget_value) (4.0+), [add_value()](#widgetadd_value) (4.0+) |
 | Image | [add_image()](#dialogadd_image) | None |
