@@ -305,11 +305,12 @@ Image path is absolute or relative on the local machine.
 ### Usage
 ```lua
 local dlg = vlc.dialog("My VLC Extension")
-local img_wgt = dlg:add_image("C:\\some\\path\\image.ext", ...)
+local abs_path_img_wgt = dlg:add_image("C:\\some\\path\\image.ext", ...)
+local rel_path_img_wgt = dlg:add_image("lua\\extensions\\image.ext", ...)
 ```
 
 ### Parameters
-`path` String representing the path to the image
+`path` String representing the path to the image. Relative path is relative to VLC's installation dir (usually `C:\\Program Files\\VideoLAN\\VLC` on Windows)
 - Optional
   - `...` [Widget](#widget-parameters) parameters
 
