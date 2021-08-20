@@ -20,12 +20,12 @@ Listen to TCP connections; creates [Net Listen Object](#listen-object).
 
 ### Usage
 ```lua
-local l = vlc.net.listen_tcp("localhost", 1234)
+local listener = vlc.net.listen_tcp(host, port)
 while true do
-	local fd = l:accept()
-	if fd >= 0 do
-		net.send(fd, "blabla")
-		net.close(fd)
+	local conn = listener:accept()
+	if conn >= 0 do
+		net.send(conn, "blabla")
+		net.close(conn)
 	end
 end
 ```
@@ -41,6 +41,11 @@ A [listen object](#listen-object)
 ## `connect_tcp()`
 Open a connection to the given host on a given port.
 
+###Usage
+```lua
+local conn = vlc.net.connect_tcp(host, port)
+```
+
 ### Parameters
 - `host` Host to connect to
 - `port` Port to connect to
@@ -54,18 +59,16 @@ Send data on an open TCP connection
 
 ### Usage
 ```lua
-local conn = vlc.net.connect_tcp("some_host", 1234)
+local conn = vlc.net.connect_tcp(host, port)
 ...
-if should_send then
-	vlc.net.send(conn, "data to send")
-end
+vlc.net.send(conn, data[, length])
 ```
 
 ### Parameters
-- `fd` File descriptor of open connection
-- `buffer` String containing data to send
+- `conn` open connection
+- `data` String containing data to send
 - Optional
-	- `length` Length of data from `buffer` to send
+	- `length` Length of data from `data` to send
 
 ### Return value
 Integer value indicating the number of bytes sent on success; `-1` on failure
@@ -74,8 +77,13 @@ Integer value indicating the number of bytes sent on success; `-1` on failure
 ## `recv()`
 Receive data from connection.
 
+### Usage
+```lua
+vlc.net.recv(conn[, maxlength])
+```
+
 ### Parameters
-- `fd` File descriptor of open TCP connection
+- `conn` open connection
 - Optional
 	- `maxlength` Integer value specifying maximum number of bytes to read from connection
 
@@ -86,8 +94,13 @@ String containing the data read from the TCP socket or `nil` if error occurred
 ## `close()`
 Close an open connection.
 
+### Usage
+```lua
+vlc.net.close(conn)
+```
+
 ### Parameters
-- `fd` File descriptor of connection to be closed
+- `conn` connection to be closed
 
 ----
 # Other Methods

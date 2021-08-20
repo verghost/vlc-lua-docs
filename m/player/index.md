@@ -75,8 +75,8 @@ Table keys are:
 ```lua
 local p_item = vlc.player.item()
 local metas = p_item:metas()
-if not (metas == nil) then
-	print("Name of current file: " .. metas["filename"])
+if metas ~= nil then
+  print("Name of current file: " .. metas["filename"])
 end
 ```
 
