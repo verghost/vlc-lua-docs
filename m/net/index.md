@@ -41,7 +41,7 @@ A [listen object](#listen-object)
 ## `connect_tcp()`
 Open a connection to the given host on a given port.
 
-###Usage
+### Usage
 ```lua
 local conn = vlc.net.connect_tcp(host, port)
 ```
