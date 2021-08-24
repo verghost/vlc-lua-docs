@@ -76,7 +76,7 @@ Table keys are:
 local p_item = vlc.player.item()
 local metas = p_item:metas()
 if metas ~= nil then
-  print("Name of current file: " .. metas["filename"])
+	print("Name of current file: " .. metas["filename"])
 end
 ```
 
